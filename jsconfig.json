@@ -35,7 +35,8 @@
     "next-env.d.js",
     "**/*.js",
     "**/*.jsx",
-    ".next/types/**/*.js"
+    ".next/types/**/*.js",
+    "app/consignes/[materiel]"
   ],
   "exclude": [
     "node_modules"
