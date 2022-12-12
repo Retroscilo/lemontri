@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.company {
+  /* min-height: 500px; */
+  height: 100%;
+  border-top: 20px solid white;
+
+}
+
+.roof div {
+  background-color: rgb(135, 221, 255);
+  border : 3px solid #ffffff;
+  height: 36px;
+}
+
+.company div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border : 3px solid #ffffff;
+  
+}
+
+
 .fadeOut {
   opacity: 0;
   transition: opacity .8s ease-in-out;
