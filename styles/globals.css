@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background: conic-gradient(from 90deg at 30% 60.79%, #EBED85 0deg, #F6F8B3 360deg);
-}
-
 .fadeOut {
   opacity: 0;
   transition: opacity .8s ease-in-out;
