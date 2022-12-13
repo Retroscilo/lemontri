@@ -3,7 +3,7 @@ import Link from 'next/link'
 import megaphone from '/public/mascote/megaphone.png';
 
 
-const Popup = ({ position, className,show, handleClose }) => {
+const Popup = ({ position, className,show, handleClose, children }) => {
   return (
     <div
       className={` popup ${
@@ -31,13 +31,7 @@ const Popup = ({ position, className,show, handleClose }) => {
             />
             <h3 className="text-[20px]">Le saviez-vous ?</h3>
           </div>
-          <div className="h-[100px] line-camp ">
-            25% des documents sont jetés 5 minutes après leur impréssion ! Pour
-            limiter le gaspillage, pensez à limiter le nombre d’imprimantes et à
-            bien les paramétrer pour qu'elles impriment en recto-verso par
-            défaut. Installer des bac à brouillons pour récupérer les
-            impréssions et pensez à utiliser du papier recyclé !
-          </div>
+          {children}
           <div className="text-right">
             <Link className="underline text-secondary-light" href={"#"}>
               En savoir plus

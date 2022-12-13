@@ -33,6 +33,7 @@ h1, h2, h3, h4 , h5 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .company .active-room {
@@ -66,13 +67,13 @@ h1, h2, h3, h4 , h5 {
   opacity: 1;
   max-height:100%;
   overflow: hidden;
+  transition : ease-in-out 400ms opacity,
+  ease-in-out 700ms max-height; 
 }
 
 .inactive{
   max-height: 0;
   opacity: 0;
   box-shadow: none;
-  transition : ease-in-out 400ms opacity,
-  ease-in-out 700ms max-height; 
 }
 

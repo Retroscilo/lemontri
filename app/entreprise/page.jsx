@@ -9,8 +9,9 @@ import Popup from "@/components/popup"
 import { useState, useEffect } from "react"
 // import  from '/public/salles/Cantine.png';
 export default function Page({ }) {
-  const [currentRoom, setCurrentRoom] = useState("")
+  const [currentTrick, setCurrentTrick] = useState({})
   const [showPopup, setShowPopup] = useState(true)
+
   const salles = [
     {
       name: "bureau",
@@ -42,50 +43,46 @@ export default function Page({ }) {
   const astuces = [
     {
       room: "bureau",
-      astuce:
-        "25% des documents sont jetés 5 minutes après leur impréssion ! Pour limiter le gaspillage, pensez à limiter le nombre d’imprimantes et à bien les paramétrer pour qu'elles impriment en recto-verso par défaut. Installer des bac à brouillons pour récupérer les impréssions et pensez à utiliser du papier recyclé !",
+      text: "25% des documents sont jetés 5 minutes après leur impréssion ! Pour limiter le gaspillage, pensez à limiter le nombre d’imprimantes et à bien les paramétrer pour qu'elles impriment en recto-verso par défaut. Installer des bac à brouillons pour récupérer les impréssions et pensez à utiliser du papier recyclé !",
     },
     {
       room: "cuisine",
-      astuce:
-        "cuisine ipsum dolor sit amet consectetur adipisicing elit. At veniam fugit labore! Doloribus, reiciendis! Aut consequatur iusto in aperiam error sapiente, sit, cupiditate odio nemo incidunt illum eos recusandae consequuntur?",
+      text: "cuisine ipsum dolor sit amet consectetur adipisicing elit. At veniam fugit labore! Doloribus, reiciendis! Aut consequatur iusto in aperiam error sapiente, sit, cupiditate odio nemo incidunt illum eos recusandae consequuntur?",
     },
     {
       room: "cafetaria",
-      astuce: "osjogijipgs pofjsjd!",
+      text: "osjogijipgs pofjsjd!",
     },
     {
       room: "openspace",
-      astuce:
-        "openspace 25% des documents sont jetés 5 minutes après leur impréssion ! Pour limiter le gaspillage, pensez à limiter le nombre d’imprimantes et à bien les paramétrer pour qu'elles impriment en recto-verso par défaut. Installer des bac à brouillons pour récupérer les impréssions et pensez à utiliser du papier recyclé !",
+      text: "openspace 25% des documents sont jetés 5 minutes après leur impréssion ! Pour limiter le gaspillage, pensez à limiter le nombre d’imprimantes et à bien les paramétrer pour qu'elles impriment en recto-verso par défaut. Installer des bac à brouillons pour récupérer les impréssions et pensez à utiliser du papier recyclé !",
     },
     {
       room: "reunion",
-      astuce:
-        "reu Lorem ipsum dolor sit amet consectetur adipisicing elit. At veniam fugit labore! Doloribus, reiciendis! Aut consequatur iusto in aperiam error sapiente, sit, cupiditate odio nemo incidunt illum eos recusandae consequuntur?",
+      text: "reu Lorem ipsum dolor sit amet consectetur adipisicing elit. At veniam fugit labore! Doloribus, reiciendis! Aut consequatur iusto in aperiam error sapiente, sit, cupiditate odio nemo incidunt illum eos recusandae consequuntur?",
     },
     {
       room: "cafetaria",
-      astuce: "cafet osjogijipgs pofjsjd!",
+      text: "cafet osjogijipgs pofjsjd!",
     },
   ]
 
   useEffect(() => {
-    const intRandom = Math.floor(Math.random() * astuces.length)
-    const room =
-      intRandom <= astuces.length
-        ? astuces[intRandom]?.room
-        : astuces[intRandom - 1]?.room 
+    let intRandom = Math.floor(Math.random() * astuces.length)
+    intRandom = intRandom > astuces.length ? intRandom - 1 : intRandom
 
-    setCurrentRoom(room)
-    console.log({ room })
+    const trick = astuces[intRandom]
+
+    setCurrentTrick(trick)
+
+    console.log({ trick })
   }, [])
 
   const handleCloseTrick = () => {
-    console.log("fermer")
     setShowPopup(false)
-    console.log({showPopup})
+    setCurrentRoom({})
   }
+
 
   return (
     <div className="relative w-full">
@@ -105,7 +102,7 @@ export default function Page({ }) {
             <div
               key={name}
               className={`${
-                name == currentRoom
+                name == currentTrick?.room
                   ? "border-primary border-[4px] active-room "
                   : "border-white border-[3px]"
               }`}
@@ -132,9 +129,11 @@ export default function Page({ }) {
       </div>
       <Popup
         handleClose={handleCloseTrick}
-        show={showPopup}
+        show={showPopup && currentTrick?.text}
         className="sticky bottom-0 left-0"
-      />
+      >
+        <div className="h-[100px] line-camp ">{currentTrick?.text}</div>
+      </Popup>
     </div>
   )
  }
