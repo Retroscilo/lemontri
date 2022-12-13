@@ -9,16 +9,13 @@ export default function Page({ }) {
   return (
     <div className="container p-6 bg-yellow-400">
       <div className="px-[30px]">
-        <div className="h-[20px] w-full bg-white"/>
+        <div className="h-[10px] w-full bg-white"/>
       </div>
       <div className="px-[40px]">
         <div className="bg-[#D9D9D9] grid grid-cols-6 roof w-full px-3 pt-3">
-          <div/>
-          <div/>
-          <div/>
-          <div/>
-          <div/>
-          <div/>
+          {
+            [...Array(6).keys()].map(i=><div key={i}/>)
+          }
         </div>
       </div>
       <div className="company grid grid-cols-6 grid-rows-3 bg-[#D9D9D9] p-3 px-10 ">
@@ -35,7 +32,7 @@ export default function Page({ }) {
           <Image src={kitchen} alt="cuisine.png" />
         </div>
         <div className="col-span-3">
-          <Image src={cafet} alt="openspace.png" contain />
+          <Image src={cafet} alt="openspace.png" />
         </div>
       </div>
     </div>
