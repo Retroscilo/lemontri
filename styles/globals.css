@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+h1, h2, h3, h4 , h5 {
+  text-transform: uppercase;
+}
+
+
 .company {
   /* min-height: 500px; */
   height: 100%;
@@ -24,8 +29,19 @@
   
 }
 
+.tooltip {
+  border: solid 1px black;
+}
 
 .fadeOut {
   opacity: 0;
   transition: opacity .8s ease-in-out;
+}
+
+.max-6-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
