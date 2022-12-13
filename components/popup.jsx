@@ -45,7 +45,7 @@ const Popup = ({ onClose, position }) => {
           pensez à utiliser du papier recyclé !
         </div>
         <div className="text-right">
-          <Link className="underline text-green-600" href={"#"}>
+          <Link className="underline text-secondary-light" href={"#"}>
             En savoir plus
           </Link>
         </div>
