@@ -33,7 +33,7 @@ export default function Page({ }) {
       size: 3
     },
     {
-      name: "cafet",
+      name: "cafetaria",
       src: cafet,
       size: 3
     },
@@ -71,8 +71,11 @@ export default function Page({ }) {
   ]
 
   useEffect(() => {
-    const intRandom = Math.round(Math.random() * astuces.length)
-    const room = astuces[intRandom]?.room 
+    const intRandom = Math.floor(Math.random() * astuces.length)
+    const room =
+      intRandom <= astuces.length
+        ? astuces[intRandom]?.room
+        : astuces[intRandom - 1]?.room 
 
     setCurrentRoom(room)
     console.log({ room })
@@ -103,7 +106,7 @@ export default function Page({ }) {
               key={name}
               className={`${
                 name == currentRoom
-                  ? "border-primary border-[4px]"
+                  ? "border-primary border-[4px] active-room "
                   : "border-white border-[3px]"
               }`}
             >
