@@ -80,7 +80,7 @@ export default function Page({ }) {
 
   const handleCloseTrick = () => {
     setShowPopup(false)
-    setCurrentRoom({})
+    setCurrentTrick({})
   }
 
 
@@ -101,13 +101,18 @@ export default function Page({ }) {
           {salles.map(({ name, src }) => (
             <div
               key={name}
-              className={`${
+              className={`
+              relative
+              tooltip
+              ${
                 name == currentTrick?.room
                   ? "border-primary border-[4px] active-room "
                   : "border-white border-[3px]"
-              }`}
+              }
+               `}
             >
               <Image src={src} alt={`${name}.png`} />
+              <span className="tooltiptext">{name}</span>
             </div>
           ))}
           {/* <div className="col-span-3">

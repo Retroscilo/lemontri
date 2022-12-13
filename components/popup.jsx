@@ -10,7 +10,7 @@ const Popup = ({ position, className,show, handleClose, children }) => {
         !show && "inactive"
       } container flex justify-center w-full h-auto ${className}`}
     >
-      <div className="tooltip relative bg-white rounded-none md:rounded-lg w-full p-5">
+      <div className="popup-container relative bg-white rounded-none md:rounded-lg w-full p-5">
         <div className="text-right top-0 right-0 absolute cursor-pointer">
           <button
             onClick={() => handleClose()}
