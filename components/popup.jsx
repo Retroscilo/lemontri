@@ -3,28 +3,19 @@ import Link from 'next/link'
 import megaphone from '/public/mascote/megaphone.png';
 
 
-const astucesBureau = [
-  {
-    salle: "bureau",
-    astuce: "25% des documents sont jetés 5 minutes après leur impréssion ! Pour limiter le gaspillage, pensez à limiter le nombre d’imprimantes et à bien les paramétrer pour qu'elles impriment en recto-verso par défaut. Installer des bac à brouillons pour récupérer les impréssions et pensez à utiliser du papier recyclé !",
-  },
-  {
-    salle: "cuisine",
-    astuce: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At veniam fugit labore! Doloribus, reiciendis! Aut consequatur iusto in aperiam error sapiente, sit, cupiditate odio nemo incidunt illum eos recusandae consequuntur?"
-  },
-  {
-    salle: "cafetaria",
-    astuce: "osjogijipgs pofjsjd!"
-  },
-]
-
-
-const Popup = ({ onClose, position,className }) => {
+const Popup = ({ position, className,show, handleClose }) => {
   return (
-    <div className={` container flex justify-center w-full ${className}`}>
+    <div
+      className={` popup ${
+        !show && "inactive"
+      } container flex justify-center w-full h-auto ${className}`}
+    >
       <div className="tooltip relative bg-white rounded-none md:rounded-lg w-full p-5">
-        <div className="text-right top-1 right-2 absolute">
-          <button className="text-[32px] inline-block text-right">
+        <div className="text-right top-0 right-0 absolute cursor-pointer">
+          <button
+            onClick={() => handleClose()}
+            className="text-[32px] inline-block p-2 text-right transition-all ease-in-out duration-300 text-black/50 hover:text-black/80"
+          >
             &#x2715;
           </button>
         </div>

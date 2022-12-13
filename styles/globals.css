@@ -33,8 +33,6 @@ h1, h2, h3, h4 , h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border : 3px solid #ffffff;
-  
 }
 
 .tooltip {
@@ -52,4 +50,18 @@ h1, h2, h3, h4 , h5 {
   display: -webkit-box;
   -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+
+.popup {
+  opacity: 1;
+  max-height:100%;
+  overflow: hidden;
+}
+
+.inactive{
+  max-height: 0;
+  opacity: 0;
+  box-shadow: none;
+  transition : ease-in-out 400ms opacity,
+  ease-in-out 700ms max-height; 
 }
