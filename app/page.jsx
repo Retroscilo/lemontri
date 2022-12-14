@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "@/assets/logos/lemontri_color.png";
 import Image from "next/image";
 import FileInput from '@/components/FileInput'
@@ -14,35 +14,37 @@ import LemonTriActived from "@/assets/icons/lemontri-actived.png"
 import LemonTriInactived from "@/assets/icons/lemontri-inactived.png"
 import Discutons from "@/assets/icons/discutons.png"
 export default function Page({ }) {
-  
-  const sections = [
-    {
-      name: "Au bureau",
-      Src: localStorage.getItem("Au bureau")
-        ? AubureauActived
-        : AubureauInactived,
-      url: "/entreprise",
-    },
-    {
-      name: "Lemon Tri",
-      Src: localStorage.getItem("Lemon Tri")
-        ? LemonTriActived
-        : LemonTriInactived,
-      url: "/lemontri",
-    },
-    {
-      name: "discutons",
-      Src: Discutons,
-      url: "/discutons",
-    },
-    {
-      name: "Consignes",
-      Src: localStorage.getItem("Consignes")
-        ? ConsignesActived
-        : ConsignesInactived,
-      url: "/consignes",
-    },
-  ]
+  const [sections,setSections] = useState([])
+  useEffect(() => {
+    setSections([
+      {
+        name: "Au bureau",
+        Src: localStorage.getItem("Au bureau")
+          ? AubureauActived
+          : AubureauInactived,
+        url: "/entreprise",
+      },
+      {
+        name: "Lemon Tri",
+        Src: localStorage.getItem("Lemon Tri")
+          ? LemonTriActived
+          : LemonTriInactived,
+        url: "/lemontri",
+      },
+      {
+        name: "discutons",
+        Src: Discutons,
+        url: "/discutons",
+      },
+      {
+        name: "Consignes",
+        Src: localStorage.getItem("Consignes")
+          ? ConsignesActived
+          : ConsignesInactived,
+        url: "/consignes",
+      },
+    ])
+  },[])
 
   const setIntoLocalStorage = (name) => {
     localStorage.setItem(name, "active")
