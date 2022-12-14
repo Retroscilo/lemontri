@@ -4,7 +4,6 @@
     left: 0;
     width: 100%;
     height: 300px;
-    background: #b15026;
 }
 
 .title-container {
@@ -13,7 +12,6 @@
 }
 
 .title {
-    font-size: 100px;
     color: white;
     margin-top: 50px;
     position: relative;
@@ -29,7 +27,6 @@
     height: 450px;
     margin-right: auto;
     margin-left: auto;
-    background: none #b15026;
     border-radius: 50%;
 }
 
@@ -43,6 +40,29 @@
     z-index: 1;
 }
 
-.section-1 {
-    margin-top: 35%;
+/*.section-1 {
+    margin-top: 550px;
+    margin-bottom: 100px;
+}*/
+.section-2 {
+    margin-bottom: 100px;
+}
+
+.section-2 .col-sm-4 > div {
+    padding: 20px;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.section-2 .landing-icon {
+    background: white;
+    z-index: 1000;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    left: 50%;
+    top: 0;
+    transform:translate(-50%,-50%)
 }
