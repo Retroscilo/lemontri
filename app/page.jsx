@@ -71,11 +71,17 @@ export default function Page({ }) {
           </Link>
         ))}
       </div>
-      <div className="bg-pink-600 flex justify-end">
-        <FileInput
-          onChange={() => console.log("file")}
-          className="bg-pink-500"
-        />
+      <div className="flex justify-end">
+        <div className="bg-white p-2 rounded-full fixed bottom-5 right-5 drop-shadow-lg">
+          <FileInput
+            onChange={() => console.log("file")}
+            className="bg-white scale-100"
+          />
+
+          {/* <IconButton size={"large"} onClick={() => console.log("click")}>
+            <AddAPhotoIcon fontSize="200px" />
+          </IconButton> */}
+        </div>
       </div>
     </div>
   )
