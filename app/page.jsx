@@ -1,36 +1,46 @@
 "use client";
-import Image from "next/image";
-import logo from "/public/logos/lemontri_color.png";
-import Text from "public/adoptons.png";
-import FileInput from "@/components/FileInput";
-import Loader from "@/components/Loader";
 import { useState } from "react";
-import requestLabel from "@/lib/requestLabel";
+import HiveGrid from "@/components/HiveGrid";
+import elements from "@/lib/hiveGridElements";
+import Logo from "@/assets/logos/lemontri_color.png";
+import Image from "next/image";
 
 export default function Page({}) {
-  const [showLoader, setShowLoader] = useState(true);
-
-  async function onLoad(e) {
-    console.log(e.target.files);
-    const labelName = await requestLabel(e.target.files[0]);
-    alert(labelName.labelName);
-  }
-
+  const [hidden, setHidden] = useState(true);
   return (
-    <div className="w-screen h-screen overflow-hidden grid grid-cols-1 md:grid-cols-[300px_1fr]">
-      <Loader show={showLoader} />
-      <div>
-        <FileInput onChange={onLoad} />
+    <div
+      className={`min-h-screen min-w-screen`}
+      style={{ background: "conic-gradient(from 90deg at -1.85% 60.79%, #56ab2f 0deg, #a8e063 360deg)" }}
+      onClick={() => {
+        console.log("clicked");
+        setHidden(false);
+      }}
+    >
+      <div className="grid grid-cols-2">
+        <div>
+          <Image src={Logo} alt="lemon tri logo"></Image>
+        </div>
+        <div className="relative">
+          <iframe width={"100%"} height={"100%"} src="https://app.vectary.com/p/43Tx1kDxTjCicWZDXZorDY"></iframe>
+        </div>
       </div>
-      <div className="max-md:pointer-events-none">
-        <iframe
-          onLoad={() => setTimeout(() => setShowLoader(false), 2000)}
-          src="https://app.vectary.com/p/43Tx1kDxTjCicWZDXZorDY"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-        ></iframe>
-      </div>
+      <HiveGrid hidden={hidden} elements={elements} />
     </div>
   );
 }
+
+/* <div className="w-screen h-screen overflow-hidden grid grid-cols-1 md:grid-cols-[300px_1fr]">
+        <Loader show={showLoader} />
+        <div>
+          <FileInput onChange={onLoad} />
+        </div>
+        <div className="max-md:pointer-events-none">
+          <iframe
+            onLoad={() => setTimeout(() => setShowLoader(false), 2000)}
+            src="https://app.vectary.com/p/43Tx1kDxTjCicWZDXZorDY"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </div>
+      </div> */
