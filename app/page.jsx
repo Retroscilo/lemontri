@@ -21,6 +21,7 @@ const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo"
 export default function Page({}) {
   const [sections, setSections] = useState(null);
   useEffect(() => {
+    if (typeof window === "undefined") return;
     setSections([
       {
         name: "Au bureau",
@@ -43,13 +44,13 @@ export default function Page({}) {
         url: "/consignes",
       },
     ]);
-  }, [localStorage]);
+  }, []);
 
   const size = useWindowSize();
 
   if (size.width > 600) return <UnderMaintenance />;
-  if (typeof window === "undefined" || !sections) return null;
-  let firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
+  if (typeof window === "undefined") return null;
+  let firstVisit = window.localStorage?.getItem("Lemon Tri") !== "active";
   const setIntoLocalStorage = (name) => {
     window.localStorage.setItem(name, "active");
   };

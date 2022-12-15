@@ -18,8 +18,7 @@ export default function Page({}) {
     setTimeout(() => setHidden(false), 200);
   }, []);
   if (!localStorage) return null;
-  let visited;
-  if (window) visited = localStorage.getItem("Consignes") === "active";
+  let visited = localStorage.getItem("Consignes") === "active";
   return (
     <div className="h-screen flex flex-col  mx-auto">
       <Image src={Logo} height={60} className="mx-auto py-4" alt="lemon tri logo" />
