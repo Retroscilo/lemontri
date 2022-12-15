@@ -17,37 +17,36 @@ import UnderMaintenance from "@/components/UnderMaintenance";
 
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
-const sections = [
-  {
-    name: "Au bureau",
-    Src: localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
-    url: "/entreprise",
-  },
-  {
-    name: "Lemon Tri",
-    Src: localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
-    url: "/lemontri",
-  },
-  {
-    name: "discutons",
-    Src: Discutons,
-    url: "/discutons",
-  },
-  {
-    name: "Consignes",
-    Src: localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
-    url: "/consignes",
-  },
-];
-
-let firstVisit;
-if (window) firstVisit = localStorage.getItem("Lemon Tri") !== "active";
-if (firstVisit) window.location.href = "/lemontri";
-
 export default function Page({}) {
   const setIntoLocalStorage = (name) => {
     localStorage.setItem(name, "active");
   };
+  const sections = [
+    {
+      name: "Au bureau",
+      Src: localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
+      url: "/entreprise",
+    },
+    {
+      name: "Lemon Tri",
+      Src: localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
+      url: "/lemontri",
+    },
+    {
+      name: "discutons",
+      Src: Discutons,
+      url: "/discutons",
+    },
+    {
+      name: "Consignes",
+      Src: localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
+      url: "/consignes",
+    },
+  ];
+
+  let firstVisit;
+  if (window) firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
+  if (firstVisit) window.location.href = "/lemontri";
 
   const size = useWindowSize();
 
