@@ -25,6 +25,7 @@ export default function Page({}) {
   };
   const [sections, setSections] = useState(null);
   useEffect(() => {
+    if (!localStorage) return;
     setSections([
       {
         name: "Au bureau",
