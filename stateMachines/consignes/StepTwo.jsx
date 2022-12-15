@@ -8,20 +8,21 @@ import Link from "next/link";
 import { HomeButtonContext } from "@/lib/HomeButtonContext";
 
 const Start = ({}) => {
-  const index = 0;
+  const index = 1;
   const { state, setState } = useContext(ThreadContext);
-  const { setVisible, setStyles } = useContext(HomeButtonContext);
+  const { visible, setVisible, setStyles } = useContext(HomeButtonContext);
   useEffect(() => {
-    setVisible(true);
+    if (!visible) setVisible(true);
     return () => setVisible(false);
   }, []);
   if (state !== index) return null;
   return (
     <div className="grow pb-6 flex flex-col justify-between">
       <SpeakingLemon image={Zesty} position={{ top: "-10px" }}>
-        Tu verras, nous proposons tout plein de <span className="font-bold"> solutions différentes </span>pour trier les déchets. <br />{" "}
-        Mais ne prend pas peur ! Tu n’es pas concerné par tout les <span className="font-bold"> flux</span>. <br /> Si tu cherche où mettre
-        tes restes de citron, tu es au bon endroit !
+        Clique simplement sur l’<span className="font-bold"> icône</span> correspondant au type du chanceux déchet que tu veux{" "}
+        <span className="font-bold"> recycler</span>, et tu saura dans quel <span className="font-bold"> bac</span> le mettre&nbsp;! <br />{" "}
+        Si tu a besoin d’un <span className="font-bold"> coup de main</span>, clique sur{" "}
+        <span className="font-bold"> l’appareil photo</span> et je te dirais dans quel <span className="font-bold"> bac</span> il va.
       </SpeakingLemon>
       <div className="flex flex-col gap-5 justify-evenly sm:flex-row max-w-[300px] mx-auto">
         <Button variant="contained" size="large" onClick={() => setState(index + 1)}>

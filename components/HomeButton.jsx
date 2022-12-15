@@ -7,14 +7,15 @@ import { useContext } from "react";
 
 const HomeButton = ({}) => {
   const { visible, styles } = useContext(HomeButtonContext);
+  if (!visible) return null;
   return (
     <div
-      className="rounded-full bg-secondary-light fixed bottom-6 left-6 transition-all"
+      className="rounded-full bg-secondary-light fixed bottom-6 right-6 transition-all transform-none scale-125"
       style={{ display: visible ? "initial" : "none", ...styles }}
     >
       <Link href="/">
-        <IconButton color="paper">
-          <Home color="paper" />
+        <IconButton color="paper" className="shadow-lg">
+          <Home className="text-white" color="paper" />
         </IconButton>
       </Link>
     </div>

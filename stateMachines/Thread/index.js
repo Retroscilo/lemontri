@@ -1,3 +1,4 @@
+"use client";
 import { useContext, useState } from "react";
 import { ThreadContext } from "./context";
 
