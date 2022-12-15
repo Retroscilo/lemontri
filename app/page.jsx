@@ -20,12 +20,12 @@ const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo"
 const sections = [
   {
     name: "Au bureau",
-    Src: localStorage.getItem("Au bureau") ? AubureauActived : AubureauInactived,
+    Src: localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
     url: "/entreprise",
   },
   {
     name: "Lemon Tri",
-    Src: localStorage.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
+    Src: localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
     url: "/lemontri",
   },
   {
@@ -35,7 +35,7 @@ const sections = [
   },
   {
     name: "Consignes",
-    Src: localStorage.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
+    Src: localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
     url: "/consignes",
   },
 ];

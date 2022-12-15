@@ -29,7 +29,7 @@ const Start = ({}) => {
           variant="contained"
           size="large"
           onClick={() => {
-            localStorage.setItem("Consignes", "active");
+            localStorage?.setItem("Consignes", "active");
             window.location.reload();
           }}
         >

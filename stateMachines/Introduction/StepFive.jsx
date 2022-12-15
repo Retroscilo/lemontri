@@ -18,7 +18,7 @@ const StepFive = ({ state, setState }) => {
       <div className="flex flex-col gap-5 justify-evenly sm:flex-row max-w-[300px] mx-auto">
         <Button
           onClick={() => {
-            localStorage.setItem("Lemon Tri", "active");
+            localStorage?.setItem("Lemon Tri", "active");
             window.location.href = "/";
           }}
           color="paper"
