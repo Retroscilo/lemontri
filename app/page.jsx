@@ -18,41 +18,43 @@ import UnderMaintenance from "@/components/UnderMaintenance";
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
 export default function Page({}) {
-  if (!localStorage) return null;
   const setIntoLocalStorage = (name) => {
     localStorage.setItem(name, "active");
   };
-  const sections = [
-    {
-      name: "Au bureau",
-      Src: localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
-      url: "/entreprise",
-    },
-    {
-      name: "Lemon Tri",
-      Src: localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
-      url: "/lemontri",
-    },
-    {
-      name: "discutons",
-      Src: Discutons,
-      url: "/discutons",
-    },
-    {
-      name: "Consignes",
-      Src: localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
-      url: "/consignes",
-    },
-  ];
+  const [sections, setSections] = useState(null);
+  useEffect(() => {
+    setSections([
+      {
+        name: "Au bureau",
+        Src: localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
+        url: "/entreprise",
+      },
+      {
+        name: "Lemon Tri",
+        Src: localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
+        url: "/lemontri",
+      },
+      {
+        name: "discutons",
+        Src: Discutons,
+        url: "/discutons",
+      },
+      {
+        name: "Consignes",
+        Src: localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
+        url: "/consignes",
+      },
+    ]);
+  }, []);
 
   let firstVisit;
-  if (window) firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
-  if (firstVisit) window.location.href = "/lemontri";
 
   const size = useWindowSize();
 
   if (size.width > 600) return <UnderMaintenance />;
-
+  if (!localStorage) return null;
+  if (window) firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
+  if (firstVisit) window.location.href = "/lemontri";
   return (
     <div className="container flex flex-col items-center bg-light h-screen w-screen relative">
       <div className="px-24 py-3 relative">

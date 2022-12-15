@@ -7,17 +7,19 @@ import HiveGrid from "@/components/HiveGrid";
 import hiveGridElements from "@/lib/hiveGridElements";
 import { useEffect, useState } from "react";
 import localFont from "@next/font/local";
+import useLocalStorage from "@/lib/useLocalStorage";
 
 const edo = localFont({ src: "../../assets/fonts/edosz.ttf" });
 
-let visited;
-if (window) visited = localStorage.getItem("Consignes") === "active";
-
 export default function Page({}) {
+  const localStorage = useLocalStorage();
   const [hidden, setHidden] = useState(true);
   useEffect(() => {
     setTimeout(() => setHidden(false), 200);
   }, []);
+  if (!localStorage) return null;
+  let visited;
+  if (window) visited = localStorage.getItem("Consignes") === "active";
   return (
     <div className="h-screen flex flex-col  mx-auto">
       <Image src={Logo} height={60} className="mx-auto py-4" alt="lemon tri logo" />
