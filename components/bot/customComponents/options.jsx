@@ -19,24 +19,24 @@ const Options = ({options,className,...props}) => {
 
   const [showButton, setShowButton] = useState(true)
 
-  const buttonsMarkup =  options?.map(({id,handler,text,...option}) => (
-      
+  // TODO : mettre les couleurs des boutons en secondary de custom theme mui 
+  const buttonsMarkup = options?.map(({ id, handler, text, ...option }) => (
     <Button
-        variant="outlined"
-        size="small"
-        key={id + text}
-        disabled={!showButton}
-        onClick={() => {
-          setShowButton(false)
-          if (option?.argsFunc?.length > 0)
-            props?.actionProvider[handler](...option?.argsFunc)
-          else
-            props?.actionProvider[handler](text)
+      variant="outlined"
+      size="small"
+      key={id + text}
+      disabled={!showButton}
+      color="secondary"
+      className="option-button"
+      onClick={() => {
+        setShowButton(false)
+        if (option?.argsFunc?.length > 0)
+          props?.actionProvider[handler](...option?.argsFunc)
+        else props?.actionProvider[handler](text)
       }}
-        className="option-button"
-      >
-        {text}
-      </Button>
+    >
+      {text}
+    </Button>
   ))
 
   return <div className={`options-container flex gap-2 flex-wrap ${className}`}>{buttonsMarkup}</div>

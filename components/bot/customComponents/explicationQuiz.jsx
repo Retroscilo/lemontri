@@ -23,7 +23,7 @@ const ExplicationQuiz = (props) => {
         disabled={!showButton}
         onClick={() => {
           setShowButton(false)
-          props?.actionProvider.showQuiz()
+          props?.actionProvider.handleConseil()
         }}
       >
         Recevoir un conseil

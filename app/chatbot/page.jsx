@@ -15,6 +15,8 @@ export default function MyComponent(){
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
+        headerText="Discuter avec Zesty"
+        placeholderText={"Demander un conseil..."}
       />
     </div>
   )

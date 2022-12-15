@@ -3,6 +3,13 @@
 import React from "react"
 import { createClientMessage } from "react-chatbot-kit"
 
+export const conseils = [
+  "conseil 1",
+  "conseil 2",
+  "conseil 4",
+  "conseil 5",
+  "conseil 6",
+]
 
 const ActionProvider = ({
   createChatBotMessage,
@@ -51,8 +58,11 @@ const ActionProvider = ({
        messages: [...prev.messages, botMessage],
      }))
   }
+
+  //Envoi un conseil alétoire
   const handleConseil = () => {
-    console.log("handleConseil")
+    const conseil = conseils[Math.floor(Math.random() * conseils.length)]
+    sendText(conseil)
   }
 
   const handleConsigne = () => {

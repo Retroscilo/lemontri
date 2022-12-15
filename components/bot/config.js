@@ -29,10 +29,15 @@ const config = {
   initialMessages: [
     createChatBotMessage(
       `Salut, je suis ${botName} !\n je suis là pour t'aider à mieux trier.`,
-      // {
-      //   widget: "quiz",
-      // }
-    )],
+    ),
+    createChatBotMessage(
+      `Tu peux choisir parmi les options ci-dessous ou on peut juste papoter !`,
+      {
+        widget: "options",
+      }
+    ),
+
+  ],
   botName: botName,
   // customStyles: {
   //   botMessageBox: {
@@ -59,14 +64,13 @@ const config = {
       widgetName: "explicationQuiz",
       widgetFunc: (props) => <ExplicationQuiz {...props} />,
     },
-    
   ],
   customComponents: {
     // Replaces the default header
     // header: () => <div style={{ backgroundColor: 'red', padding: "5px", borderRadius: "3px" }}>Discussion avec { botName }</div>
     // Replaces the default bot avatar
     botAvatar: () => (
-      <div className="inline-block bg-orange-400 overflow-hidden p-1 border-orange border-spacing-1 w-[40px] h-[40px] relative rounded-full">
+      <div className="inline-block overflow-hidden border border-gray/50 p-1 border-orange border-spacing-1 w-[40px] h-[40px] relative rounded-full mr-[16px]">
         <Image src={Old} alt={"avatar.png"} />
       </div>
     ),
