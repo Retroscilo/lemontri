@@ -10,7 +10,7 @@ import ActionProvider from "@/components/bot/ActionProvider"
 
 export default function MyComponent(){
   return (
-    <div>
+    <div className="w-screen h-screen chatbot">
       <Chatbot
         config={config}
         messageParser={MessageParser}
