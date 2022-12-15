@@ -42,7 +42,7 @@ import { useState, useEffect } from "react"
       question: "Le verre, l'aluminium et l'acier sont recyclables à l'infini",
       choices: ["Vrai", "Faux"],
       correct: 1,
-      explication: [],
+      explication: [""],
     },
     {
       question: "Les papiers et les cartons sont recyclables à l'infini",
@@ -88,7 +88,7 @@ import { useState, useEffect } from "react"
 // }
 
 const Quiz = (props) => {
-  const [currentQuiz, setCurrentQuiz] = useState()
+  const [currentQuiz, setCurrentQuiz] = useState({})
 
   useEffect(() => {
     const randomQuiz = quiz[Math.floor(Math.random() * quiz.length)]
@@ -96,11 +96,20 @@ const Quiz = (props) => {
     setCurrentQuiz(randomQuiz)
   }, [setCurrentQuiz])
 
-  const options = currentQuiz?.choices?.map((choices,index) => ({
-    text: choices,
-    argsFunc: [choices,currentQuiz?.explication, index + 1 == currentQuiz?.correct ],
-    handler: "handleQuizAnswer"
-  }))
+  const options = currentQuiz?.choices?.map((choice, index) => {
+    const { choices, correct } = currentQuiz
+    
+    return {
+      text: choice,
+      argsFunc: [
+        choice,
+        currentQuiz?.explication,
+        index + 1 == currentQuiz?.correct,
+        choices?.[correct - 1]
+      ],
+      handler: "handleQuizAnswer",
+    }
+})
 
   return (
     <div className="questions">

@@ -5,13 +5,14 @@ import Image from 'next/image'
 import { createChatBotMessage,createClientMessage } from 'react-chatbot-kit';
 import CustomAvatar from './CustomAvatar'
 import DogPicture from './dogPicture';
-import Options from './options/options'
-import Quiz from './options/quiz'
+import Options from './customComponents/options'
+import Quiz from './customComponents/quiz'
 import Old from "/assets/icons/zesty/old.png"
+import ExplicationQuiz from './customComponents/explicationQuiz'
 
 const botName = 'Zesty';
 
-const options = [
+export const options = [
     {
       text: "Conseil",
       handler: "handleConseil",
@@ -28,9 +29,9 @@ const config = {
   initialMessages: [
     createChatBotMessage(
       `Salut, je suis ${botName} !\n je suis là pour t'aider à mieux trier.`,
-      {
-        widget: "quiz",
-      }
+      // {
+      //   widget: "quiz",
+      // }
     )],
   botName: botName,
   // customStyles: {
@@ -50,10 +51,13 @@ const config = {
       widgetName: "dogPicture",
       widgetFunc: (props) => <DogPicture {...props} />,
     },
-    
     {
       widgetName: "quiz",
       widgetFunc: (props) => <Quiz {...props} />,
+    },
+    {
+      widgetName: "explicationQuiz",
+      widgetFunc: (props) => <ExplicationQuiz {...props} />,
     },
     
   ],

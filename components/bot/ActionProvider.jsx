@@ -60,13 +60,24 @@ const ActionProvider = ({
   }
 
 
-  const handleQuizAnswer = (answer, explication, correct) => {
+  const handleQuizAnswer = (answer, explication, isCorrect,correctAnwer) => {
     sendClientText(answer)
-    if(correct)
+    if(isCorrect)
       sendText("Bien joué")
     else
-      sendText("ho non")
-    sendText(explication)
+      sendText(`Dommage ! La bonne réponse est : ${correctAnwer}`)
+    
+    const botMessage = createChatBotMessage(
+      explication,
+      {
+        widget: "explicationQuiz",
+      }
+    )
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }))
   }
   
   const handleDog = () => {
