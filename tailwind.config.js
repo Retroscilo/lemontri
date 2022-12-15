@@ -19,7 +19,7 @@ module.exports = {
     fontFamily: {
       edosz: ["edosz", "serif"], // Ensure fonts with spaces have " " surrounding it.
       roboto: ["Roboto", "sans-serif"],
-      bebaneue: ['"Beba Neue"', 'cursive'],
+      bebaneue: ['"Beba Neue"', "cursive"],
     },
   },
   corePlugins: {
