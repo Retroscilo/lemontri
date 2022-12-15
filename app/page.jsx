@@ -38,14 +38,13 @@ const sections = [
   },
 ];
 
-const firstVisit = localStorage.getItem("Lemon Tri") === "active";
+const firstVisit = localStorage.getItem("Lemon Tri") !== "active";
+if (firstVisit) window.location.href = "/lemontri";
 
 export default function Page({}) {
   const setIntoLocalStorage = (name) => {
     localStorage.setItem(name, "active");
   };
-
-  if (firstVisit) window.location.href = "/lemontri";
 
   return (
     <div className="container flex flex-col items-center bg-light h-screen w-screen relative">

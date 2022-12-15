@@ -10,6 +10,7 @@ const Start = ({}) => {
   const index = 0;
   const { state, setState } = useContext(ThreadContext);
   if (state !== index) return null;
+  localStorage.setItem("Lemon Tri", "active");
   return (
     <div className="grow pb-6 flex flex-col justify-between">
       <SpeakingLemon image={Zesty} position={{ top: "-10px" }}>

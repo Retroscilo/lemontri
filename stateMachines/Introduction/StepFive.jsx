@@ -13,11 +13,19 @@ const StepFive = ({ state, setState }) => {
         Si tu veux <span className="font-bold"> aller plus loin</span>, tu peux visiter mon{" "}
         <span className="font-bold"> entreprise virtuelle</span>. Tu y retrouvera toute les <span className="font-bold"> astuces</span> pour
         <span className="font-bold"> réduire</span> tes déchets ainsi que des alternatives <span className="font-bold"> zéro-déchets </span>
-        à proposer a tes collègues&nbsp;! <br /> <br /> <span className="font-bold mt-2"> Encore merci pour ton engagement ! </span>
+        à proposer a tes collègues&nbsp;! <br /> <span className="font-bold mt-2"> Encore merci pour ton engagement ! </span>
       </SpeakingLemon>
       <div className="flex flex-col gap-5 justify-evenly sm:flex-row max-w-[300px] mx-auto">
-        <Button color="paper" variant="contained" size="large">
-          <Link href={"/"}>Merci Zesty 🔙</Link>
+        <Button
+          onClick={() => {
+            localStorage.setItem("Lemon Tri", "active");
+            window.location.href = "/";
+          }}
+          color="paper"
+          variant="contained"
+          size="large"
+        >
+          Merci Zesty 🔙
         </Button>
         <Button variant="contained" size="large">
           <Link href={"/entreprise"}>Allons visiter ton entreprise ✨</Link>
