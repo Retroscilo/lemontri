@@ -55,8 +55,24 @@ export const tricks = [
     text: "En France, la poubelle résiduelle des ménages contient ainsi un tiers de déchets putrescibles (principalement alimentaires : restes, épluchures…), soit environ 85 kg / an / habitant[1]. En mélange avec d’autres ordures résiduelles, les déchets se polluent mutuellement : en décharge, il faudra capter et dépolluer les jus issus de cette décomposition en mélange, ainsi que les gaz produits par la fermentation des matières organiques ; et en incinération, il s’agira de brûler des déchets organiques essentiellement composés d’eau, pour une efficacité énergétique qui sera donc très faible.",
   },
   {
-    room: "openspace",
-    text: "openspace 25% des documents sont jetés 5 minutes après leur impréssion ! Pour limiter le gaspillage, pensez à limiter le nombre d’imprimantes et à bien les paramétrer pour qu'elles impriment en recto-verso par défaut. Installer des bac à brouillons pour récupérer les impréssions et pensez à utiliser du papier recyclé !",
+    matiere: "gobelets en plastique",
+    room: "cuisine",
+    text: "Mise à disposition de mugs, gourdes et contenants réutilisables pour éviter les produits à usage unique.",
   },
+  {
+    matiere:"toners et cartouches",
+    room:"bureau",
+    text:"Si chaque cartouche était recyclée au moins une fois, mle volume de ce type de déchets dimunuerait de moitié. La cartouche d'imprimante représente donc un enjeu considérable en matière de recyclage.",
+  },
+  {
+    matiere:"biodéchets",
+    room:"cuisine",
+    text:"Consommables équitables et en vrac, prestataire de repas déjeuners avec emballages consignés.",
+  },
+  {
+    matiere:"bois",
+    room:"bureaux",
+    text:"Aménagement et décoration de nos bureaux à partir de matériaux de réemploi et d’éléments de récup’.",
+  }
 
 ]
