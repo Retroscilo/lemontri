@@ -61,7 +61,7 @@ export default function Page(props) {
     return <div className="consignes">
         <div id="rectangle" style={{backgroundColor: getItem().color}}>
             <div className="title-container">
-                <h1 className="title text-center text-[30px] md:text-[70px] lg:text-[100px] font-bold">{getItem().title}</h1>
+                <h1 className="title text-center text-[30px] md:text-[70px] lg:text-[100px] mt-[20px] md:my-[40px] font-bold">{getItem().title}</h1>
             </div>
             <div id="circle" className="hidden md:block" style={{backgroundColor: getItem().color}}></div>
             <Image id="logo" src={getItem().logo} width="150" height="150"/>
@@ -69,7 +69,7 @@ export default function Page(props) {
         <div className="section-1 flex flex-col xl:flex-row gap-10 place-content-around mt-[380px] md:mt-[550px] mb-[100px]">
             {getItem().cards.map((card, key) => (
                 <div className="flex-1 flex justify-center" key={key}>
-                    <div className="rounded-lg bg-white max-w-sm flex flex-col justify-between">
+                    <div className="rounded-lg max-w-sm flex flex-col justify-between">
                         <Image className="rounded-t-lg" src={card.image} width="100 %"/>
                         <div className="p-6">
                             <h5 className="text-center text-2xl mb-2 font-bold"
