@@ -1,46 +1,75 @@
 "use client";
-import { useState } from "react";
-import HiveGrid from "@/components/HiveGrid";
-import elements from "@/lib/hiveGridElements";
+import { useEffect, useState } from "react";
 import Logo from "@/assets/logos/lemontri_color.png";
 import Image from "next/image";
-
+import FileInput from "@/components/FileInput";
+import { IconButton } from "@mui/material";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import Link from "next/link";
+import AubureauActived from "@/assets/icons/aubureau-actived.png";
+import AubureauInactived from "@/assets/icons/aubureau-inactived.png";
+import ConsignesActived from "@/assets/icons/consignes-actived.png";
+import ConsignesInactived from "@/assets/icons/consignes-inactived.png";
+import LemonTriActived from "@/assets/icons/lemontri-actived.png";
+import LemonTriInactived from "@/assets/icons/lemontri-inactived.png";
+import Discutons from "@/assets/icons/discutons.png";
 export default function Page({}) {
-  const [hidden, setHidden] = useState(true);
+  const [sections, setSections] = useState([]);
+  useEffect(() => {
+    setSections([
+      {
+        name: "Au bureau",
+        Src: localStorage.getItem("Au bureau") ? AubureauActived : AubureauInactived,
+        url: "/entreprise",
+      },
+      {
+        name: "Lemon Tri",
+        Src: localStorage.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
+        url: "/lemontri",
+      },
+      {
+        name: "discutons",
+        Src: Discutons,
+        url: "/discutons",
+      },
+      {
+        name: "Consignes",
+        Src: localStorage.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
+        url: "/consignes",
+      },
+    ]);
+  }, []);
+
+  const setIntoLocalStorage = (name) => {
+    localStorage.setItem(name, "active");
+  };
   return (
-    <div
-      className={`min-h-screen min-w-screen`}
-      style={{ background: "conic-gradient(from 90deg at -1.85% 60.79%, #56ab2f 0deg, #a8e063 360deg)" }}
-      onClick={() => {
-        console.log("clicked");
-        setHidden(false);
-      }}
-    >
-      <div className="grid grid-cols-2">
-        <div>
-          <Image src={Logo} alt="lemon tri logo"></Image>
-        </div>
-        <div className="relative">
-          <iframe width={"100%"} height={"100%"} src="https://app.vectary.com/p/43Tx1kDxTjCicWZDXZorDY"></iframe>
+    <div className="container flex flex-col items-center bg-light h-screen w-screen relative">
+      <div className="px-24 py-3 relative">
+        <Image priority={true} src={Logo} alt="logo.png" />
+      </div>
+      <h1 className="text-center my-3 ">Adoptons les bons gestes</h1>
+      <div className="grid grid-cols-2 grid-rows-2 p-2 gap-y-5 ">
+        {sections.map(({ name, SrcActive, SrcInactive, Src, url }, i) => (
+          <Link
+            href={url}
+            key={name}
+            onClick={() => setIntoLocalStorage(name)}
+            className=" buble-link relative first-of-type:translate-y-10 [&:nth-child(3)]:mt-8 last-of-type:-translate-y-5"
+          >
+            <div>{Src ? <Image src={Src} alt="logo.png" priority={true} /> : <Image priority={true} src={SrcActive} alt="couc.png" />}</div>
+          </Link>
+        ))}
+      </div>
+      <div className="flex justify-end">
+        <div className="bg-white p-2 rounded-full fixed bottom-5 right-5 drop-shadow-lg">
+          <FileInput onChange={() => console.log("file")} className="bg-white scale-100" />
+
+          {/* <IconButton size={"large"} onClick={() => console.log("click")}>
+            <AddAPhotoIcon fontSize="200px" />
+          </IconButton> */}
         </div>
       </div>
-      <HiveGrid hidden={hidden} elements={elements} />
     </div>
   );
 }
-
-/* <div className="w-screen h-screen overflow-hidden grid grid-cols-1 md:grid-cols-[300px_1fr]">
-        <Loader show={showLoader} />
-        <div>
-          <FileInput onChange={onLoad} />
-        </div>
-        <div className="max-md:pointer-events-none">
-          <iframe
-            onLoad={() => setTimeout(() => setShowLoader(false), 2000)}
-            src="https://app.vectary.com/p/43Tx1kDxTjCicWZDXZorDY"
-            frameBorder="0"
-            width="100%"
-            height="100%"
-          ></iframe>
-        </div>
-      </div> */

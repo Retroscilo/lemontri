@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
     <html>
       <head />
       <body id="__next">
-        <StyledEngineProvider injectFirst>
+        <StyledEngineProvider injectFirst={true}>
           <ThemeContext>{children}</ThemeContext>
         </StyledEngineProvider>
       </body>
