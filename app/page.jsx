@@ -19,10 +19,6 @@ import useLocalStorage from "@/lib/useLocalStorage";
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
 export default function Page({}) {
-  const localStorage = useLocalStorage();
-  const setIntoLocalStorage = (name) => {
-    window.localStorage.setItem(name, "active");
-  };
   const [sections, setSections] = useState(null);
   useEffect(() => {
     if (!localStorage) return;
@@ -50,13 +46,14 @@ export default function Page({}) {
     ]);
   }, []);
 
-  let firstVisit;
-
   const size = useWindowSize();
 
   if (size.width > 600) return <UnderMaintenance />;
-  if (!localStorage) return null;
-  if (localStorage) firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
+  if (typeof window === "undefined") return null;
+  let firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
+  const setIntoLocalStorage = (name) => {
+    window.localStorage.setItem(name, "active");
+  };
   if (firstVisit) window.location.href = "/lemontri";
   return (
     <div className="container flex flex-col items-center bg-light h-screen w-screen relative">
