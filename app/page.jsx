@@ -14,10 +14,12 @@ import Discutons from "@/assets/icons/discutons.png";
 import localFont from "@next/font/local";
 import useWindowSize from "@/lib/useWindowDimensions";
 import UnderMaintenance from "@/components/UnderMaintenance";
+import useLocalStorage from "@/lib/useLocalStorage";
 
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
 export default function Page({}) {
+  const localStorage = useLocalStorage();
   const setIntoLocalStorage = (name) => {
     window.localStorage.setItem(name, "active");
   };
@@ -26,12 +28,12 @@ export default function Page({}) {
     setSections([
       {
         name: "Au bureau",
-        Src: window.localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
+        Src: localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
         url: "/entreprise",
       },
       {
         name: "Lemon Tri",
-        Src: window.localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
+        Src: localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
         url: "/lemontri",
       },
       {
@@ -41,7 +43,7 @@ export default function Page({}) {
       },
       {
         name: "Consignes",
-        Src: window.localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
+        Src: localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
         url: "/consignes",
       },
     ]);
@@ -52,8 +54,8 @@ export default function Page({}) {
   const size = useWindowSize();
 
   if (size.width > 600) return <UnderMaintenance />;
-  if (!window) return null;
-  if (window) firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
+  if (!localStorage) return null;
+  if (localStorage) firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
   if (firstVisit) window.location.href = "/lemontri";
   return (
     <div className="container flex flex-col items-center bg-light h-screen w-screen relative">
