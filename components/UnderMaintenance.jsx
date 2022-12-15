@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Maintenance from "@/assets/images/maintenance.png";
+import Maintenance from "@/assets/images/Maintenance.png";
 import { Bebas_Neue } from "@next/font/google";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
