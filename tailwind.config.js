@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  important: "#__next",
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./stateMachines/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -20,5 +22,8 @@ module.exports = {
       bebaneue: ['"Beba Neue"', 'cursive'],
     },
   },
+  corePlugins: {
+    preflight: false,
+  },
   plugins: [],
-}
+};

@@ -28,6 +28,9 @@
       ],
       "@/assets/*": [
         "assets/*"
+      ],
+      "@/stateMachines/*": [
+        "stateMachines/*"
       ]
     }
   },
