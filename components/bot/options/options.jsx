@@ -1,4 +1,5 @@
 import { Button } from "@mui/material"
+import { useState } from 'react'
 
 
 const Options = ({options,...props}) => {
@@ -17,19 +18,26 @@ const Options = ({options,...props}) => {
   //   },
   // ]
 
+  const [showButton, setShowButton] = useState(true)
+
   const buttonsMarkup =  options.map(({id,handler,text,...option}) => (
-      <Button
+      
+    <Button
         variant="outlined"
         size="small"
         key={id}
-        onClick={()=> props.actionProvider[handler](text)}
+        disabled={!showButton}
+      onClick={() => {
+        setShowButton(false)
+        props.actionProvider[handler](text)
+      }}
         className="option-button"
       >
         {text}
       </Button>
   ))
 
-  return <div className="options-container flex gap-2 flex-wrap">{buttonsMarkup}</div>
+  return <div className={"options-container flex gap-2 flex-wrap"}>{buttonsMarkup}</div>
 }
 
 export default Options

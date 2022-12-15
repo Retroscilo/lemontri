@@ -32,6 +32,13 @@ const ActionProvider = ({
     }))
     }
 
+  const handleConseil = () => {
+    console.log("handleConseil")
+  }
+
+  const handleConsigne = () => {
+    console.log("handleConsigne")
+  }
   const handleDog = () => {
     const botMessage = createChatBotMessage(
       "Here's a nice dog picture for you!",
@@ -54,6 +61,8 @@ const ActionProvider = ({
             handleDog,
             sendText,
             handleJavascriptQuiz,
+            handleConseil,
+            handleConsigne,
           },
         })
       })}

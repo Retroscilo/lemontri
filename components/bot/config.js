@@ -13,13 +13,13 @@ const botName = 'Zesty';
 const options = [
     {
       text: "Conseil",
-      handler: "handleJavascriptQuiz",
+      handler: "handleConseil",
       id: 1,
     },
     { text: "Quiz", handler: "handleJavascriptQuiz", id: 2 },
     {
       text: "Consigne",
-      handler: "handleJavascriptQuiz", id: 3
+      handler: "handleConsigne", id: 3
     },
   ]
 
