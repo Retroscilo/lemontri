@@ -19,19 +19,19 @@ const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo"
 
 export default function Page({}) {
   const setIntoLocalStorage = (name) => {
-    localStorage.setItem(name, "active");
+    window.localStorage.setItem(name, "active");
   };
   const [sections, setSections] = useState(null);
   useEffect(() => {
     setSections([
       {
         name: "Au bureau",
-        Src: localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
+        Src: window.localStorage?.getItem("Au bureau") ? AubureauActived : AubureauInactived,
         url: "/entreprise",
       },
       {
         name: "Lemon Tri",
-        Src: localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
+        Src: window.localStorage?.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
         url: "/lemontri",
       },
       {
@@ -41,7 +41,7 @@ export default function Page({}) {
       },
       {
         name: "Consignes",
-        Src: localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
+        Src: window.localStorage?.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
         url: "/consignes",
       },
     ]);
@@ -52,7 +52,7 @@ export default function Page({}) {
   const size = useWindowSize();
 
   if (size.width > 600) return <UnderMaintenance />;
-  if (!localStorage) return null;
+  if (!window) return null;
   if (window) firstVisit = localStorage?.getItem("Lemon Tri") !== "active";
   if (firstVisit) window.location.href = "/lemontri";
   return (
