@@ -2,7 +2,7 @@ import useWindowSize from "@/lib/useWindowDimensions";
 
 const HiveGrid = ({ elements, hidden }) => {
   const size = useWindowSize();
-  let baseWidth = size.width * (1 / 6.7);
+  let baseWidth = size.width * (1 / 6.4);
   let gap = 30;
   const maxWidth = 600;
 
@@ -14,14 +14,14 @@ const HiveGrid = ({ elements, hidden }) => {
 
   if (!size.width) return null;
   return (
-    <div className="w-full h-full max-w-[600px] mx-auto flex justify-center flex-col">
+    <div className="w-full h-full max-w-[600px] mx-auto flex flex-col">
       {[...Array(rowNumber).keys()].map((row_i) => {
         let even = rowNumber % 2 === 0 ? row_i % 2 !== 0 : row_i % 2 === 0;
         if (even) correction++;
         return (
           <div
             key={row_i}
-            className={`flex justify-center items-center my-[10px] mx-auto`}
+            className={`flex justify-center items-center my-[4px] mx-auto`}
             style={{ gap, maxWidth: size.width > maxWidth && !even ? "85%" : "inherit" }}
           >
             {[...Array(even ? colNumber : colNumber - 1).keys()].map((col_i) => {
