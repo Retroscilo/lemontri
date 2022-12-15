@@ -57,7 +57,7 @@ export default function Page({}) {
       <div className="px-24 py-3 relative">
         <Image priority={true} src={Logo} alt="logo.png" />
       </div>
-      <h1 className={`text-3xl text-center my-3 text-sans ${edo.className}`}>Adoptons les bons gestes</h1>
+      <h1 className={`text-3xl text-center my-3 text-sans text-secondary-light ${edo.className}`}>Adoptons les bons gestes</h1>
       <div className="grid grid-cols-2 grid-rows-2 p-2 gap-y-5 ">
         {sections.map(({ name, SrcActive, SrcInactive, Src, url }, i) => (
           <Link
