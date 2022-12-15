@@ -12,6 +12,8 @@ import LemonTriActived from "@/assets/icons/lemontri-actived.png";
 import LemonTriInactived from "@/assets/icons/lemontri-inactived.png";
 import Discutons from "@/assets/icons/discutons.png";
 import localFont from "@next/font/local";
+import useWindowSize from "@/lib/useWindowDimensions";
+import UnderMaintenance from "@/components/UnderMaintenance";
 
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
@@ -45,6 +47,10 @@ export default function Page({}) {
   const setIntoLocalStorage = (name) => {
     localStorage.setItem(name, "active");
   };
+
+  const size = useWindowSize();
+
+  if (size.width > 600) return <UnderMaintenance />;
 
   return (
     <div className="container flex flex-col items-center bg-light h-screen w-screen relative">
