@@ -50,8 +50,9 @@ export const tricks = [
     text: "La loi française anti-gaspillage pour une économie circulaire de 2020 stipule la création d'une filière pollueur-payeur pour les cigarettes. Autrement dit,à partir de 2023, les fabricants de cigarettes devront verser 2,08 euros par an et par habitant aux communes de plus de 50.000 habitants, 1,08 euro pour les communes comptant entre 50.000 habitants et 50 centimes pour les plus petites.",
   },
   {
-    room: "cafetaria",
-    text: "cafetaria4 osjogijipgs pofjsjd!",
+    matiere:"biodechets",
+    room: "cuisine",
+    text: "En France, la poubelle résiduelle des ménages contient ainsi un tiers de déchets putrescibles (principalement alimentaires : restes, épluchures…), soit environ 85 kg / an / habitant[1]. En mélange avec d’autres ordures résiduelles, les déchets se polluent mutuellement : en décharge, il faudra capter et dépolluer les jus issus de cette décomposition en mélange, ainsi que les gaz produits par la fermentation des matières organiques ; et en incinération, il s’agira de brûler des déchets organiques essentiellement composés d’eau, pour une efficacité énergétique qui sera donc très faible.",
   },
   {
     room: "openspace",
