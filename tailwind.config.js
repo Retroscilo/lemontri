@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   important: "#__next",
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./stateMachines/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-edo)", ...fontFamily.sans],
+      },
       colors: {
         primary: "#FFCC07", // jaune
         secondary: {
@@ -15,11 +19,6 @@ module.exports = {
         gray: "#969696",
         dark: "#4B4B4B",
       },
-    },
-    fontFamily: {
-      edosz: ["edosz", "serif"], // Ensure fonts with spaces have " " surrounding it.
-      roboto: ["Roboto", "sans-serif"],
-      bebaneue: ['"Beba Neue"', "cursive"],
     },
   },
   corePlugins: {
