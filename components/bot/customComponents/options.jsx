@@ -2,7 +2,7 @@ import { Button } from "@mui/material"
 import { useState } from 'react'
 
 
-const Options = ({options,...props}) => {
+const Options = ({options,className,...props}) => {
   
   // const options = [
   //   {
@@ -39,7 +39,7 @@ const Options = ({options,...props}) => {
       </Button>
   ))
 
-  return <div className={"options-container flex gap-2 flex-wrap"}>{buttonsMarkup}</div>
+  return <div className={`options-container flex gap-2 flex-wrap ${className}`}>{buttonsMarkup}</div>
 }
 
 export default Options

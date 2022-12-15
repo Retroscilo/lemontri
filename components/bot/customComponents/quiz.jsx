@@ -38,12 +38,12 @@ import { useState, useEffect } from "react"
         "Depuis le mois d'avril 2006, il est possible de recycler les bouteilles en plastique ayant contenu de l'huile.",
       ],
     },
-    {
-      question: "Le verre, l'aluminium et l'acier sont recyclables à l'infini",
-      choices: ["Vrai", "Faux"],
-      correct: 1,
-      explication: [""],
-    },
+    // {
+    //   question: "Le verre, l'aluminium et l'acier sont recyclables à l'infini",
+    //   choices: ["Vrai", "Faux"],
+    //   correct: 1,
+    //   explication: [""],
+    // },
     {
       question: "Les papiers et les cartons sont recyclables à l'infini",
       choices: ["Vrai", "Faux"],
@@ -98,7 +98,7 @@ const Quiz = (props) => {
 
   const options = currentQuiz?.choices?.map((choice, index) => {
     const { choices, correct } = currentQuiz
-    
+
     return {
       text: choice,
       argsFunc: [
@@ -112,11 +112,11 @@ const Quiz = (props) => {
 })
 
   return (
-    <div className="questions">
-      <div>
+    <div className="questions border border-gray/30 p-2 rounded-md ">
+      <div className="mb-2">
         {currentQuiz?.question}
       </div>
-      <Options options={options || []} {...props} />
+      <Options className={"pt-2"} options={options || []} {...props} />
     </div>
   )
 }
