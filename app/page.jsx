@@ -18,6 +18,7 @@ import UnderMaintenance from "@/components/UnderMaintenance";
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
 export default function Page({}) {
+  if (!localStorage) return null;
   const setIntoLocalStorage = (name) => {
     localStorage.setItem(name, "active");
   };
