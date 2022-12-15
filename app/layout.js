@@ -1,10 +1,17 @@
+"use client";
 import "@/styles/globals.css";
+import ThemeContext from "@/lib/ThemeContext";
+import { StyledEngineProvider } from "@mui/material/styles";
 
 export default function RootLayout({ children }) {
   return (
     <html>
       <head />
-      <body>{children}</body>
+      <body id="__next">
+        <StyledEngineProvider injectFirst>
+          <ThemeContext>{children}</ThemeContext>
+        </StyledEngineProvider>
+      </body>
     </html>
   );
 }
