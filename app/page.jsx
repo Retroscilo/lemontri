@@ -40,7 +40,8 @@ const sections = [
   },
 ];
 
-const firstVisit = localStorage.getItem("Lemon Tri") !== "active";
+let firstVisit;
+if (window) firstVisit = localStorage.getItem("Lemon Tri") !== "active";
 if (firstVisit) window.location.href = "/lemontri";
 
 export default function Page({}) {

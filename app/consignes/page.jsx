@@ -10,7 +10,8 @@ import localFont from "@next/font/local";
 
 const edo = localFont({ src: "../../assets/fonts/edosz.ttf" });
 
-const visited = localStorage.getItem("Consignes") === "active";
+let visited;
+if (window) visited = localStorage.getItem("Consignes") === "active";
 
 export default function Page({}) {
   const [hidden, setHidden] = useState(true);
