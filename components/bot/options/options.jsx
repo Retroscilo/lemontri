@@ -1,29 +1,31 @@
 import { Button } from "@mui/material"
 
 
-const Options = (props) => {
-  const options = [
-    {
-      text: "Conseil",
-      handler: props.actionProvider.handleJavascriptQuiz,
-      id: 1,
-    },
-    { text: "Quiz", handler: props.actionProvider.handleJavascriptQuiz, id: 2 },
-    {
-      text: "Consigne",
-      handler: props.actionProvider.handleJavascriptQuiz, id: 3
-    },
-  ]
+const Options = ({options,...props}) => {
+  console.log({props})
+  
+  // const options = [
+  //   {
+  //     text: "Conseil",
+  //     handler: props.actionProvider.handleJavascriptQuiz,
+  //     id: 1,
+  //   },
+  //   { text: "Quiz", handler: props.actionProvider.handleJavascriptQuiz, id: 2 },
+  //   {
+  //     text: "Consigne",
+  //     handler: props.actionProvider.handleJavascriptQuiz, id: 3
+  //   },
+  // ]
 
-  const buttonsMarkup = options.map((option) => (
+  const buttonsMarkup =  options.map(({id,handler,text,...option}) => (
       <Button
         variant="outlined"
         size="small"
-        key={option.id}
-        onClick={option.handler}
+        key={id}
+        onClick={()=> props.actionProvider[handler](text)}
         className="option-button"
       >
-        {option.text}
+        {text}
       </Button>
   ))
 

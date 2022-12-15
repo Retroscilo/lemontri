@@ -7,6 +7,12 @@ import kitchen from '/public/salles/Shop.png'
 import reunion from '/public/salles/Ecole.png'
 import Popup from "@/components/popup"
 import { useState, useEffect } from "react"
+
+export const getRandomInt = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
 // import  from '/public/salles/Cantine.png';
 export default function Page({ }) {
   const [currentTrick, setCurrentTrick] = useState({})
@@ -115,11 +121,6 @@ export default function Page({ }) {
     },
   ]
 
-  function getRandomInt(min, max) {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min
-  }
   useEffect(() => {
     const intRandom = getRandomInt(0,tricks.length - 1)
 

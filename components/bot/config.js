@@ -2,13 +2,26 @@
 
 import Image from 'next/image'
 // in config.js
-import { createChatBotMessage } from 'react-chatbot-kit';
+import { createChatBotMessage,createClientMessage } from 'react-chatbot-kit';
 import CustomAvatar from './CustomAvatar'
 import DogPicture from './dogPicture';
 import Options from './options/options'
 import Old from "/assets/icons/zesty/old.png"
 
 const botName = 'Zesty';
+
+const options = [
+    {
+      text: "Conseil",
+      handler: "handleJavascriptQuiz",
+      id: 1,
+    },
+    { text: "Quiz", handler: "handleJavascriptQuiz", id: 2 },
+    {
+      text: "Consigne",
+      handler: "handleJavascriptQuiz", id: 3
+    },
+  ]
 
 const config = {
   initialMessages: [
@@ -18,6 +31,7 @@ const config = {
         widget: "options",
       }
     ),
+    createClientMessage("Fantastic. Here is your quiz. Good luck!"),
   ],
   botName: botName,
   // customStyles: {
@@ -31,7 +45,7 @@ const config = {
   widgets: [
     {
       widgetName: "options",
-      widgetFunc: (props) => <Options {...props} />,
+      widgetFunc: (props) => <Options options={options} {...props} />,
     },
     {
       widgetName: "dogPicture",

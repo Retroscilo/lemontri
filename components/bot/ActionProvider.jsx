@@ -1,37 +1,34 @@
 "use client"
 
 import React from "react"
+import { createClientMessage } from "react-chatbot-kit"
 
 
 const ActionProvider = ({
   createChatBotMessage,
-  createClientMessage,
   setState,
   children,
+  ...props
 }) => {
   //TODO :Peut-être faire un fetch sur une api de recyclage directement ??
+  console.log({ createClientMessage, createChatBotMessage })
 
   const sendText = (text) => {
     const botMessage = createChatBotMessage(text)
-    console.log({createClientMessage,createChatBotMessage})
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
     }))
   }
 
-  const handleJavascriptQuiz = () => {
-    const message = createChatBotMessage(
-      "Fantastic. Here is your quiz. Good luck!"
-      // ,
-      // {
-      //   widget: "javascriptQuiz",
-      // }
-    )
+  const handleJavascriptQuiz = (answer) => {
+    const clientMessage = createClientMessage(answer)
+
+    const message = createChatBotMessage("Bien joué !")
 
     setState((prev) => ({
       ...prev,
-      messages: [...prev.messages, message],
+      messages: [...prev.messages, clientMessage, message],
     }))
     }
 
