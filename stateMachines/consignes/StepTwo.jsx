@@ -16,7 +16,6 @@ const Start = ({}) => {
     return () => setVisible(false);
   }, []);
   if (state !== index) return null;
-  if (!localStorage) return null;
   return (
     <div className="grow pb-6 flex flex-col justify-between">
       <SpeakingLemon image={Zesty} position={{ top: "-10px" }}>
@@ -30,7 +29,6 @@ const Start = ({}) => {
           variant="contained"
           size="large"
           onClick={() => {
-            localStorage?.setItem("Consignes", "active");
             window.location.reload();
           }}
         >

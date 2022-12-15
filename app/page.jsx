@@ -14,7 +14,6 @@ import Discutons from "@/assets/icons/discutons.png";
 import localFont from "@next/font/local";
 import useWindowSize from "@/lib/useWindowDimensions";
 import UnderMaintenance from "@/components/UnderMaintenance";
-import useLocalStorage from "@/lib/useLocalStorage";
 
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
@@ -49,7 +48,7 @@ export default function Page({}) {
   const size = useWindowSize();
 
   if (size.width > 600) return <UnderMaintenance />;
-  if (typeof window === "undefined") return null;
+  if (typeof window === "undefined" || !sections) return null;
   let firstVisit = window.localStorage?.getItem("Lemon Tri") !== "active";
   const setIntoLocalStorage = (name) => {
     window.localStorage.setItem(name, "active");

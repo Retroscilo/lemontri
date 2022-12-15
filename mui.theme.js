@@ -1,9 +1,9 @@
 "use client";
-import { createTheme } from "@mui/material/styles";
+import createTheme from "@mui/material/styles/createTheme";
 import tailwind, { theme } from "./tailwind.config";
 const colors = { ...tailwind.theme.extend.colors };
 
-const themeOptions = createTheme(theme, {
+const themeOptions = createTheme({
   palette: {
     type: "light",
     primary: {
@@ -25,6 +25,15 @@ const themeOptions = createTheme(theme, {
       main: "#FFF",
       dark: "#FFF",
       light: "#FFF",
+    },
+  },
+  components: {
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          borderRadius: "9999px !important",
+        },
+      },
     },
   },
 });
