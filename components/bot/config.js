@@ -6,6 +6,7 @@ import { createChatBotMessage,createClientMessage } from 'react-chatbot-kit';
 import CustomAvatar from './CustomAvatar'
 import DogPicture from './dogPicture';
 import Options from './options/options'
+import Quiz from './options/quiz'
 import Old from "/assets/icons/zesty/old.png"
 
 const botName = 'Zesty';
@@ -28,11 +29,9 @@ const config = {
     createChatBotMessage(
       `Salut, je suis ${botName} !\n je suis là pour t'aider à mieux trier.`,
       {
-        widget: "options",
+        widget: "quiz",
       }
-    ),
-    createClientMessage("Fantastic. Here is your quiz. Good luck!"),
-  ],
+    )],
   botName: botName,
   // customStyles: {
   //   botMessageBox: {
@@ -51,6 +50,12 @@ const config = {
       widgetName: "dogPicture",
       widgetFunc: (props) => <DogPicture {...props} />,
     },
+    
+    {
+      widgetName: "quiz",
+      widgetFunc: (props) => <Quiz {...props} />,
+    },
+    
   ],
   customComponents: {
     // Replaces the default header

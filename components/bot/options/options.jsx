@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 
 const Options = ({options,...props}) => {
-  console.log({props})
   
   // const options = [
   //   {
@@ -20,16 +19,19 @@ const Options = ({options,...props}) => {
 
   const [showButton, setShowButton] = useState(true)
 
-  const buttonsMarkup =  options.map(({id,handler,text,...option}) => (
+  const buttonsMarkup =  options?.map(({id,handler,text,...option}) => (
       
     <Button
         variant="outlined"
         size="small"
-        key={id}
+        key={id + text}
         disabled={!showButton}
-      onClick={() => {
-        setShowButton(false)
-        props.actionProvider[handler](text)
+        onClick={() => {
+          setShowButton(false)
+          if (option?.argsFunc?.length > 0)
+            props?.actionProvider[handler](...option?.argsFunc)
+          else
+            props?.actionProvider[handler](text)
       }}
         className="option-button"
       >

@@ -7,17 +7,23 @@ import { createClientMessage } from "react-chatbot-kit"
 const ActionProvider = ({
   createChatBotMessage,
   setState,
-  children,
-  ...props
+  children
 }) => {
   //TODO :Peut-être faire un fetch sur une api de recyclage directement ??
-  console.log({ createClientMessage, createChatBotMessage })
 
   const sendText = (text) => {
     const botMessage = createChatBotMessage(text)
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
+    }))
+  }
+
+  const sendClientText = (text) => {
+    const clientMessage = createClientMessage(text)
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, clientMessage],
     }))
   }
 
@@ -32,6 +38,19 @@ const ActionProvider = ({
     }))
     }
 
+  const showQuiz = () => {
+    const botMessage = createChatBotMessage(
+      "Zest parti pour tester tes connaissances 🤓 !!",
+      {
+        widget: "quiz",
+      }
+    )
+
+     setState((prev) => ({
+       ...prev,
+       messages: [...prev.messages, botMessage],
+     }))
+  }
   const handleConseil = () => {
     console.log("handleConseil")
   }
@@ -39,11 +58,23 @@ const ActionProvider = ({
   const handleConsigne = () => {
     console.log("handleConsigne")
   }
+
+
+  const handleQuizAnswer = (answer, explication, correct) => {
+    sendClientText(answer)
+    if(correct)
+      sendText("Bien joué")
+    else
+      sendText("ho non")
+    sendText(explication)
+  }
+  
   const handleDog = () => {
     const botMessage = createChatBotMessage(
       "Here's a nice dog picture for you!",
       {
         widget: "dogPicture",
+        
       }
     )
 
@@ -63,6 +94,8 @@ const ActionProvider = ({
             handleJavascriptQuiz,
             handleConseil,
             handleConsigne,
+            handleQuizAnswer,
+            showQuiz,
           },
         })
       })}

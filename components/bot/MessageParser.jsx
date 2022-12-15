@@ -87,16 +87,41 @@ const everySimilarWordMatch = (words = [[]], wordToMatch = "")=> {
   return false
 }
 
-const MessageParser = ({ children, actions,...props }) => {
+const MessageParser = ({ children, actions, ...props }) => {
+  
+  const [category,setCategory] = React.useState()
   const parse = (message) => {
+    const lastUserMessage = [
+      ...children?.props?.state?.messages.filter((m) => m.type == "user"),
+    ].pop()?.message?.toLowerCase()
+      // console.log({ childrenho: children?.props?.state?.messages })
     if (typeof message == 'string') {
       message = message.toLowerCase()
     }
+    console.log({lastUserMessage})
+
+    if (message == "quiz" || lastUserMessage == "quiz") {
+      setCategory("quiz")
+      actions.showQuiz()
+    }
+
+    if (message == "conseil" || lastUserMessage == "conseil") {
+      setCategory("conseil")
+    }
+
+    if (message == "consigne" || lastUserMessage == "consigne") {
+      setCategory("consigne")
+    }
+      
+    if (category == "quiz") {
+      
+    }
+
     if (
       someWordMatch(["salut", "bonjour", "bjr", "slt", "yo", "coucou","hey","hello"], message)
     ) {
       actions.sendText(messagesBot.hello)
-      console.log({ CLIENT : children.props})
+      console.log({category})
     }
 
     if (everyWordMatch(["recyclable","infini"],message)) {
