@@ -3,8 +3,7 @@ import { useContext, useEffect } from "react";
 import { ThreadContext } from "../Thread/context";
 import SpeakingLemon from "@/components/SpeakingLemon";
 import Zesty from "./Zesty/Zesty.png";
-import { Button } from "@mui/material";
-import Link from "next/link";
+import Button from "@mui/material/Button";
 import { HomeButtonContext } from "@/lib/HomeButtonContext";
 
 const Start = ({}) => {

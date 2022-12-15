@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { Home } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
+import Home from "@mui/icons-material/Home";
+import IconButton from "@mui/material/IconButton";
 import { HomeButtonContext } from "@/lib/HomeButtonContext";
 import { useContext } from "react";
 

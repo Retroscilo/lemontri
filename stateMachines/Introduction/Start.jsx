@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ThreadContext } from "../Thread/context";
 import SpeakingLemon from "@/components/SpeakingLemon";
 import Zesty from "./Zesty/Start.png";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import Link from "next/link";
 
 const Start = ({}) => {

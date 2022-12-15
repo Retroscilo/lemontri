@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import Logo from "@/assets/logos/lemontri_color.png";
 import Image from "next/image";
 import FileInput from "@/components/FileInput";
-import { IconButton } from "@mui/material";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import Link from "next/link";
 import AubureauActived from "@/assets/icons/aubureau-actived.png";
 import AubureauInactived from "@/assets/icons/aubureau-inactived.png";

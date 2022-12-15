@@ -1,6 +1,6 @@
 import SpeakingLemon from "@/components/SpeakingLemon";
 import Zesty from "./Zesty/StepThree.png";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 
 const StepThree = ({ state, setState }) => {
   let index = 3;
