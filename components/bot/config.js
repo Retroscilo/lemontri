@@ -13,17 +13,18 @@ import ExplicationQuiz from './customComponents/explicationQuiz'
 const botName = 'Zesty';
 
 export const options = [
-    {
-      text: "Conseil",
-      handler: "handleConseil",
-      id: 1,
-    },
-    { text: "Quiz", handler: "handleJavascriptQuiz", id: 2 },
-    {
-      text: "Consigne",
-      handler: "handleConsigne", id: 3
-    },
-  ]
+  {
+    text: "Conseil",
+    handler: "handleConseil",
+    id: 1,
+  },
+  { text: "Quiz", handler: "showQuiz", id: 2 },
+  // {
+  //   text: "Consigne",
+  //   handler: "handleConsigne",
+  //   id: 3,
+  // },
+]
 
 const config = {
   initialMessages: [

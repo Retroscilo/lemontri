@@ -62,7 +62,16 @@ const ActionProvider = ({
   //Envoi un conseil alétoire
   const handleConseil = () => {
     const conseil = conseils[Math.floor(Math.random() * conseils.length)]
-    sendText(conseil)
+
+    const botMessage = createChatBotMessage(
+      conseil, {
+      widget: "options",
+    })
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }))
   }
 
   const handleConsigne = () => {
@@ -80,7 +89,7 @@ const ActionProvider = ({
     const botMessage = createChatBotMessage(
       explication,
       {
-        widget: "explicationQuiz",
+        widget: "options",
       }
     )
 
