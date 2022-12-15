@@ -37,7 +37,7 @@ export const tricks = [
   {
     matiere: "goblets en carton",
     room: "cuisine",
-    text: "Le bon geste pour trier les gobelets en carton : il faut bien les vider. Si vous consommez à doomicile, vous pouvez trier votre gobelet dans le bac qui accueille les emballages en papeir-carton. Vous consommez dans la rue ou dans un lieu ? Triez-le dans les bacs de tri disponibles. Il a un couvercle et une paille en plastique ? Séparez-les pour les jeter avec les ordures ménagères.",
+    text: "Le bon zeste pour trier les gobelets en carton : il faut bien les vider. Si vous consommez à doomicile, vous pouvez trier votre gobelet dans le bac qui accueille les emballages en papeir-carton. Vous consommez dans la rue ou dans un lieu ? Triez-le dans les bacs de tri disponibles. Il a un couvercle et une paille en plastique ? Séparez-les pour les jeter avec les ordures ménagères.",
   },
   {
     matiere: "masques jetables",
