@@ -8,25 +8,23 @@ const themeOptions = createTheme(theme, {
     type: "light",
     primary: {
       main: "#069B3E",
+      light: "rgb(4, 108, 43)",
+      dark: "rgb(4, 108, 43)",
     },
     secondary: {
       main: "#FFCC07",
       dark: "#408C32",
       light: "#069B3E",
     },
+    info: {
+      main: "rgb(55, 175, 100)",
+      light: "rgb(55, 175, 100)",
+      dark: "rgb(55, 175, 100)",
+    },
     paper: {
       main: "#FFF",
       dark: "#FFF",
       light: "#FFF",
-    },
-  },
-  components: {
-    MuiButtonContained: {
-      styleOverrides: {
-        root: {
-          background: `${colors.secondary.dark} !important`,
-        },
-      },
     },
   },
 });

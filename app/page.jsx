@@ -12,38 +12,41 @@ import LemonTriActived from "@/assets/icons/lemontri-actived.png";
 import LemonTriInactived from "@/assets/icons/lemontri-inactived.png";
 import Discutons from "@/assets/icons/discutons.png";
 import localFont from "@next/font/local";
+
 const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
 
-export default function Page({}) {
-  const [sections, setSections] = useState([]);
-  useEffect(() => {
-    setSections([
-      {
-        name: "Au bureau",
-        Src: localStorage.getItem("Au bureau") ? AubureauActived : AubureauInactived,
-        url: "/entreprise",
-      },
-      {
-        name: "Lemon Tri",
-        Src: localStorage.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
-        url: "/lemontri",
-      },
-      {
-        name: "discutons",
-        Src: Discutons,
-        url: "/discutons",
-      },
-      {
-        name: "Consignes",
-        Src: localStorage.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
-        url: "/consignes",
-      },
-    ]);
-  }, []);
+const sections = [
+  {
+    name: "Au bureau",
+    Src: localStorage.getItem("Au bureau") ? AubureauActived : AubureauInactived,
+    url: "/entreprise",
+  },
+  {
+    name: "Lemon Tri",
+    Src: localStorage.getItem("Lemon Tri") ? LemonTriActived : LemonTriInactived,
+    url: "/lemontri",
+  },
+  {
+    name: "discutons",
+    Src: Discutons,
+    url: "/discutons",
+  },
+  {
+    name: "Consignes",
+    Src: localStorage.getItem("Consignes") ? ConsignesActived : ConsignesInactived,
+    url: "/consignes",
+  },
+];
 
+const firstVisit = localStorage.getItem("Lemon Tri") === "active";
+
+export default function Page({}) {
   const setIntoLocalStorage = (name) => {
     localStorage.setItem(name, "active");
   };
+
+  if (firstVisit) window.location.href = "/lemontri";
+
   return (
     <div className="container flex flex-col items-center bg-light h-screen w-screen relative">
       <div className="px-24 py-3 relative">
@@ -55,7 +58,7 @@ export default function Page({}) {
           <Link
             href={url}
             key={name}
-            onClick={() => setIntoLocalStorage(name)}
+            onClick={() => name !== "Consignes" && setIntoLocalStorage(name)}
             className=" buble-link relative first-of-type:translate-y-10 [&:nth-child(3)]:mt-8 last-of-type:-translate-y-5"
           >
             <div>{Src ? <Image src={Src} alt="logo.png" priority={true} /> : <Image priority={true} src={SrcActive} alt="couc.png" />}</div>
@@ -65,10 +68,6 @@ export default function Page({}) {
       <div className="flex justify-end">
         <div className="bg-white p-2 rounded-full fixed bottom-5 right-5 drop-shadow-lg">
           <FileInput onChange={() => console.log("file")} className="bg-white scale-100" />
-
-          {/* <IconButton size={"large"} onClick={() => console.log("click")}>
-            <AddAPhotoIcon fontSize="200px" />
-          </IconButton> */}
         </div>
       </div>
     </div>
