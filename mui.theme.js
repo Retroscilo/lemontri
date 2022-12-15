@@ -1,5 +1,5 @@
 "use client";
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 import tailwind, { theme } from "./tailwind.config";
 const colors = { ...tailwind.theme.extend.colors };
 
