@@ -113,28 +113,32 @@ const MessageParser = ({ children, actions, ...props }) => {
       setCategory("consigne")
     }
       
-    if (category == "quiz") {
-      
-    }
-
-    if (
-      someWordMatch(["salut", "bonjour", "bjr", "slt", "yo", "coucou","hey","hello"], message)
-    ) {
+    if (message.includes["salut"]) {
       actions.sendText(messagesBot.hello)
-      console.log({category})
     }
 
-    if (everyWordMatch(["recyclable","infini"],message)) {
-      actions.sendText(messagesBot.matiereRecyclableInfini)
+    else {
+      actions.fetchOpenAi(message)
     }
 
-    if (everyWordMatch(["combien", "français", "produ", "déchet"],message)) {
-      actions.sendText(messagesBot.productionDechetFrancais)
-    }
+    // if (
+    //   someWordMatch(["salut", "bonjour", "bjr", "slt", "yo", "coucou","hey","hello"], message)
+    // ) {
+    //   actions.sendText(messagesBot.hello)
+    //   console.log({category})
+    // }
 
-    if (everySimilarWordMatch([["devien"],["matière","matiere","matire"],["premières","premier"], ["recyclées","recyle","recyclé"]],message)) {
-      actions.sendText(messagesBot.productionDechetFrancais)
-    }
+    // if (everyWordMatch(["recyclable","infini"],message)) {
+    //   actions.sendText(messagesBot.matiereRecyclableInfini)
+    // }
+
+    // if (everyWordMatch(["combien", "français", "produ", "déchet"],message)) {
+    //   actions.sendText(messagesBot.productionDechetFrancais)
+    // }
+
+    // if (everySimilarWordMatch([["devien"],["matière","matiere","matire"],["premières","premier"], ["recyclées","recyle","recyclé"]],message)) {
+    //   actions.sendText(messagesBot.productionDechetFrancais)
+    // }
       
       
       if (message.includes("dog")) {

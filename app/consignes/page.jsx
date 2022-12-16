@@ -7,7 +7,6 @@ import HiveGrid from "@/components/HiveGrid";
 import hiveGridElements from "@/lib/hiveGridElements";
 import { useEffect, useState } from "react";
 import localFont from "@next/font/local";
-import useLocalStorage from "@/lib/useLocalStorage";
 import TextField from "@mui/material/TextField";
 import Search from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -16,21 +15,24 @@ const edo = localFont({ src: "../../assets/fonts/edosz.ttf" });
 
 export default function Page({}) {
   const [displayedElements, setDisplay] = useState(hiveGridElements);
+  const [active, setActive] = useState(null);
   const [hidden, setHidden] = useState(true);
   useEffect(() => {
     setTimeout(() => setHidden(false), 200);
+    if (typeof window === "undefined") return;
+    setActive(localStorage.getItem("Consignes") === "active");
   }, []);
   const handleFilter = (e) => {
     setDisplay(hiveGridElements.filter((el) => el.key.includes(e.target.value) || el.key === "input"));
   };
-  if (typeof window === "undefined") return null;
+  if (typeof window === "undefined" || active === null) return null;
   return (
     <div className="h-screen flex flex-col  mx-auto">
       <div className="grid grid-cols-[30%_70%]">
         <Image src={Logo} height={60} className="py-4 mx-auto" alt="lemon tri logo" />
-        <h1 className={`${edo.className} text-center text-xl my-2 text-secondary-light self-center`}>Les consignes</h1>
+        <h1 className={`${edo.className} text-right pr-5 text-3xl my-2 text-secondary-light self-center`}>Les consignes</h1>
       </div>
-      {localStorage.getItem("Consignes") !== "active" ? (
+      {!active ? (
         <div>
           <Thread pages={Consignes}></Thread>
         </div>

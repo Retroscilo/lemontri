@@ -4,6 +4,113 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap');
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto','Calibri', sans-serif;
+  background-color: #F8F7D3;
+  line-height: 120%;
+}
+a {
+  all: unset;
+  background-color: #F8F7D3;
+  line-height: 120%;
+}
+a {
+  all: unset;
+}
+
+h1, h2, h3, h4 , h5 {
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.company {
+  /* min-height: 500px; */
+  height: 100%;
+  border-top: 14px solid white;
+
+}
+
+.roof div {
+  background-color: rgb(135, 221, 255);
+  border : 3px solid #ffffff;
+  height: 36px;
+}
+
+.company div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.company .active-room {
+   box-shadow:
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #FFCC07,
+    inset 0 0 16px #FFCC07,
+    0 0 32px #FFCC07,
+    inset 0 0 32px #FFCC07; 
+}
+
+.popup {
+  box-shadow: 2px 4px 10px rgba(128, 128, 128,0.2);
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  text-transform: uppercase;
+  width: 120px;
+  background-color: #ffffff;
+  color: green;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 20px;
+ 
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  /* visibility: visible; */
+  opacity: 1;
+  @apply invisible md:visible;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity .8s ease-in-out;
+}
+
+.line-camp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical
+}
+
+.popup {
+  overflow: hidden;
+  transition: all 400ms ease-in-out;
+  transform: translateY(0);
+}
+
+.inactive{
+  position: fixed !important;
+  box-shadow: none;
+  transform: translateY(100%);
+}
+
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
