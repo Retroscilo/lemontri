@@ -35,7 +35,7 @@ export default function Page({}) {
       {
         name: "discutons",
         Src: Discutons,
-        url: "/discutons",
+        url: "/chatbot",
       },
       {
         name: "Consignes",
@@ -66,7 +66,7 @@ export default function Page({}) {
             href={url}
             key={name}
             onClick={() => name !== "Consignes" && setIntoLocalStorage(name)}
-            className=" buble-link relative first-of-type:translate-y-10 [&:nth-child(3)]:mt-8 last-of-type:-translate-y-5"
+            className=" buble-link relative first-of-type:translate-y-10 [&:nth-child(3)]:mt-8 last-of-type:-translate-y-5 cursor-pointer"
           >
             <div>{Src ? <Image src={Src} alt="logo.png" priority={true} /> : <Image priority={true} src={SrcActive} alt="couc.png" />}</div>
           </Link>
