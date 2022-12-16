@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ThreadContext } from "../Thread/context";
 import SpeakingLemon from "@/components/SpeakingLemon";
 import Zesty from "./Zesty/Start.png";
@@ -9,6 +9,9 @@ import Link from "next/link";
 const Start = ({}) => {
   const index = 0;
   const { state, setState } = useContext(ThreadContext);
+  useEffect(() => {
+    localStorage?.setItem("Lemon Tri", "active");
+  }, []);
   if (state !== index) return null;
   return (
     <div className="grow pb-6 flex flex-col justify-between">

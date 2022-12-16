@@ -14,17 +14,12 @@ const FileInput = ({ onChange, className }) => {
   }
 
   return (
-    <div className={`scale-150 bg-white rounded-full ${className}`}>
-      {!loading ? (
-        <>
-          <IconButton size={"large"} onClick={() => fileInput.current.click()}>
-            <AddAPhotoIcon fontSize="80px" />
-          </IconButton>
-          <input ref={fileInput} onChange={handleChange} type="file" accept="image/*" hidden />
-        </>
-      ) : (
-        <CircularProgress />
-      )}
+    <div className={`bg-white rounded-full w-[60px] h-[60px] flex items-center justify-center ${className}`}>
+      <IconButton size={"large"} className={"w-full h-full"} onClick={() => fileInput.current.click()}>
+        {!loading && <AddAPhotoIcon fontSize="80px" />}
+        {loading && <CircularProgress />}
+      </IconButton>
+      <input ref={fileInput} onChange={handleChange} type="file" accept="image/*" hidden />
     </div>
   );
 };

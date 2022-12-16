@@ -12,7 +12,7 @@ const StepFour = ({ state, setState }) => {
         <span className="font-bold">En effet !</span> <br /> <br />
         <div className="font-bold">Il faut connaitre les consignes de tri !</div>
         👉 À chaque matière sa poubelle ! Tu trouveras un bac dans lequel tu pourra mettre l’emballage du burger de midi et un autre pour
-        les cartons propres. <br /> <br />
+        les cartons propres. <br />
         <span className="font-bold"> Le bon déroulement du cycle dépend de toi !</span>
       </SpeakingLemon>
       <div className="flex flex-col gap-5 justify-evenly sm:flex-row max-w-[300px] mx-auto">

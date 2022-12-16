@@ -9,8 +9,8 @@ import { HomeButtonContext } from "@/lib/HomeButtonContext";
 
 const Start = ({}) => {
   const index = 1;
-  const { state, setState } = useContext(ThreadContext);
-  const { visible, setVisible, setStyles } = useContext(HomeButtonContext);
+  const { state } = useContext(ThreadContext);
+  const { visible, setVisible } = useContext(HomeButtonContext);
   useEffect(() => {
     if (!visible) setVisible(true);
     return () => setVisible(false);
@@ -25,8 +25,14 @@ const Start = ({}) => {
         <span className="font-bold"> l’appareil photo</span> et je te dirais dans quel <span className="font-bold"> bac</span> il va.
       </SpeakingLemon>
       <div className="flex flex-col gap-5 justify-evenly sm:flex-row max-w-[300px] mx-auto">
-        <Button variant="contained" size="large" onClick={() => setState(index + 1)}>
-          Ca marche 👌
+        <Button
+          variant="contained"
+          size="large"
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          C&apos;est parti 👍
         </Button>
       </div>
     </div>
