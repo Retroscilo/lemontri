@@ -76,3 +76,128 @@ export const tricks = [
   }
 
 ]
+
+
+
+export const conseil = [
+    "Réduire l'utilisation des produits jetables : optez pour des contenants réutilisables pour les aliments, les boissons et les produits ménagers. Utilisez des sacs réutilisables pour vos courses et évitez les sacs en plastique.",
+    "Composter :Composter les déchets organiques vous permet de réduire le volume des déchets et de produire un fertilisant naturel pour votre jardin.",
+    "Achetez en vrac: Achetez des produits en vrac pour éviter le gaspillage et les emballages jetables. De plus, vous pourrez acheter seulement ce dont vous avez besoin.",
+    "Réutilisez et réparez :Réutilisez les objets et réparez-les lorsqu'ils sont endommagés plutôt que de les remplacer. Cela vous fera économiser de l'argent et réduira la quantité de déchets à éliminer.",
+    "Utilisez des produits durables : Choisissez des produits durables fabriqués à partir de matériaux recyclés. Cela vous aidera à réduire les déchets tout en contribuant à la protection de l'environnement.",
+    "Réutilisez les matériaux :Réutilisez les matériaux dont vous n'avez plus besoin. Par exemple, vous pouvez transformer des bouteilles en verre ou des canettes en contenants ou en accessoires décoratifs pour votre maison.",
+    "Réduisez l'utilisation du papier : Réduisez l'utilisation du papier en imprimant et en photocopiant moins souvent et en optant pour des alternatives numériques. De plus, réutilisez le papier qui n'est plus nécessaire.",
+    "Évitez les produits chimiques : Évitez les produits chimiques et optez pour des solutions naturelles pour nettoyer votre maison. Vous pouvez par exemple fabriquer vos produits d'entretien à base de bicarbonate de soude, vinaigre blanc et citron.",
+    "Réduisez votre consommation d'eau : Réduisez votre consommation d'eau en prenant des douches plus courtes et en réutilisant l'eau de pluie pour les tâches ménagères.",
+    "Utilisez des produits de seconde main : Utilisez des produits de seconde main pour réduire votre consommation et votre production de déchets. Vous pouvez trouver des produits à prix abordables dans les magasins d'occasion et les sites de vente en ligne.",
+]
+
+
+
+  export const quiz =  [
+    {
+      question: "Combien un français produit de déchet par jour ?",
+      choices: ["5kg", "200g", "1kg"],
+      correct: 3,
+      explication: [
+        "Avec l'augmentation de la consommation et de la population, la concentration des familles dans les villes, ces déchets sont devenus à la fois plus nombreux (2% de plus par an) et plus diversifiés.",
+      ],
+    },
+    {
+      question: "Quelle est la bonne façon de trier les déchets ?",
+      choices: ["Mettre les matières recyclables dans un sac et le reste dans un autre sac","Mettre tous les déchets dans un seul sac","Trier les déchets en fonction de leur catégorie","Mettre tous les déchets dans une seule poubelle"],
+      correct: 3,
+      explication: [
+        "Il est important de trier les déchets en fonction de leur catégorie pour permettre une meilleure gestion des déchets. Les matières recyclables doivent être triées et mises dans des sacs séparés, les biodéchets doivent être placés dans un composteur et les déchets non recyclables doivent être jetés dans des sacs et placés dans des poubellencore.",
+      ],
+    },
+    {
+      question: "Qu'est-ce qu'un produit recyclable ?",
+      choices: ["Un produit fait à partir de matières recyclées","Un produit qui peut être jeté sans être trié","Un produit qui peut être jeté dans une poubelle"," Un produit qui peut être réutilisé"],
+      correct: 1,
+      explication: [
+        "Un produit recyclable est un produit qui est fabriqué à partir de matériaux recyclés. Les produits recyclables peuvent être recyclés encore et encore, ce qui permet de réduire la quantité de déchets produite et d'économiser des ressources naturelles.",
+      ],
+    },
+    {
+      question: "Qu'est-ce que le compostage ",
+      choices: ["Le processus de tri des déchets","Le processus de recyclage des déchets","Le processus de conversion des déchets en engrais","Le processus de fabrication des produits à partir de matières recyclées"],
+      correct: 3,
+      explication: [
+        "Le compostage est le processus par lequel les déchets organiques sont transformés en un engrais riche et nutritif utilisé pour nourrir les plantes. Le compostage est un moyen efficace de réduire le volume des déchets produits et de créer un produit utile et durable.",
+      ],
+    },
+    {
+      question: "Qu'est-ce que le recyclage ?",
+      choices: ["Le processus de tri des déchets","Le processus de réutilisation des déchets","Le processus de conversion des déchets en engrais","Le processus de fabrication des produits à partir de matières recyclées"],
+      correct: 4,
+      explication: [
+        "Le recyclage est le processus de transformation des déchets en matières premières qui peuvent être utilisées pour fabriquer de nouveaux produits. Le recyclage est un moyen efficace de réduire les déchets produits et de réduire l'utilisation des matières premières.",
+      ],
+    },
+    {
+      question: "Quel est l'avantage principal du compostage ?",
+      choices: ["Il permet de réduire la quantité de déchets produits","Il peut être réutilisé pour nourrir les plantes","Il permet de réutiliser les matières recyclées","Il permet de produire de nouveaux produits"],
+      correct: 2,
+      explication: [
+        "Le compostage est le processus par lequel les déchets organiques sont transformés en un engrais riche et nutritif utilisé pour nourrir les plantes. Le compostage est un moyen efficace de réduire le volume des déchets produits et de créer un produit utile et durable.",
+      ],
+    },
+    {
+      question: "Qu'est-ce que le réemploi ?",
+      choices: ["Le processus de tri des déchets","Le processus de réutilisation des déchets","Le processus de conversion des déchets en engrais","Le processus de fabrication des produits à partir de matières recyclées"],
+      correct: 2,
+      explication: [
+        "Le réemploi est le processus de réutilisation des déchets pour créer de nouveaux produits ou matériaux. Il permet de réutiliser les déchets pour créer des produits utiles et d'économiser des matières premières et des ressources.",
+      ],
+    },
+    {
+      question: "Quelle est la bonne façon de traiter les déchets ?",
+      choices: ["Trier les déchets en fonction de leur catégorie","Placer les déchets dans un seul sac","Mettre les déchets dans une seule poubelle","Mettre les matières recyclables dans un sac et le reste dans un autre sac"],
+      correct: 1,
+      explication: [
+        "Il est important de trier les déchets en fonction de leur catégorie pour permettre une meilleure gestion des déchets. Les matières recyclables doivent être triées et mises dans des sacs séparés, les biodéchets doivent être placés dans un composteur et les déchets non recyclables doivent être jetés dans des sacs et placés dans des poubelles",
+      ],
+    },
+    {
+      question: "Quel est l'avantage principal du recyclage ?",
+      choices: ["Il permet de réduire la quantité de déchets produits","Il peut être réutilisé pour nourrir les plantes","Il permet de réutiliser les matières recyclées","Il permet de produire de nouveaux produits"],
+      correct: 4,
+      explication: [
+        "Le recyclage est le processus de transformation des déchets en matières premières qui peuvent être utilisées pour fabriquer de nouveaux produits. Le recyclage est un moyen efficace de réduire les déchets produits et de réduire l'utilisation des matières premières.",
+      ],
+    },
+    {
+      question: "Quel est l'avantage principal du réemploi ?",
+      choices: ["Il permet de réduire la quantité de déchets produits","Il peut être réutilisé pour nourrir les plantes","Il permet de réutiliser les matières recyclées"," Il permet de produire de nouveaux produits"],
+      correct: 4,
+      explication: [
+        "Le réemploi est le processus de réutilisation des déchets pour créer de nouveaux produits ou matériaux. Il permet de réutiliser les déchets pour créer des produits utiles et d'économiser des matières premières et des ressources.",
+      ],
+    },
+    {
+      question: "Quel type de déchets peut être recyclé ?",
+      choices: ["Les déchets organiques (compostables)","Les déchets recyclables (plastiques, métaux, papiers, verres, etc.)","Les déchets ménagers (déchets alimentaires, déchets électroniques, etc.)"],
+      correct: 2,
+      explication: [
+        "Les déchets recyclables peuvent être triés et réutilisés pour fabriquer des produits neufs. Les autres types de déchets doivent être traités et ne sont pas recyclables.",
+      ],
+    },
+    {
+      question: "Quels sont les déchets qui peuvent être compostés ?",
+      choices: ["Les déchets ménagers (déchets alimentaires, déchets électroniques, etc.)","Les déchets organiques (compostables)","Les déchets recyclables (plastiques, métaux, papiers, verres, etc.)"],
+      correct: 2,
+      explication: [
+        "Les déchets organiques peuvent être compostés pour créer un fertilisant naturel et sain. Les déchets recyclables et ménagers ne peuvent pas être compostés.",
+      ],
+    },
+    {
+      question: "Quels sont les types de déchets qui doivent être traités de manière appropriée ?",
+      choices: ["Les déchets organiques (compostables)","Les déchets recyclables (plastiques, métaux, papiers, verres, etc.)","Les déchets ménagers (déchets alimentaires, déchets électroniques, etc.)"],
+      correct: 1,
+      explication: [
+        "Les déchets organiques et ménagers doivent être traités de manière appropriée afin d'être éliminés correctement. Les déchets recyclables peuvent être triés et réutilisés pour fabriquer des produits neufs.",
+      ],
+    },
+
+]
