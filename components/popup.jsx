@@ -1,20 +1,18 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import megaphone from '/public/mascote/megaphone.png';
+import Image from "next/image";
+import Link from "next/link";
+import megaphone from "/public/mascote/megaphone.png";
+import { Bebas_Neue } from "@next/font/google";
 
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
-const Popup = ({ position, className,show, handleClose, children }) => {
+const Popup = ({ position, className, show, handleClose, children }) => {
   return (
-    <div
-      className={` popup ${
-        !show && "inactive"
-      } container flex justify-center w-full h-auto ${className}`}
-    >
+    <div className={` popup ${!show && "inactive"} container flex justify-center w-full h-auto ${className}`}>
       <div className="popup-container relative bg-white rounded-none md:rounded-lg w-full p-5">
         <div className="text-right top-0 right-0 absolute cursor-pointer">
           <button
             onClick={() => handleClose()}
-            className="text-[32px] inline-block p-2 text-right transition-all ease-in-out duration-300 text-black/50 hover:text-black/80"
+            className="text-[32px] z-10 inline-block p-2 text-right transition-all ease-in-out duration-300 bg-white text-black/50 hover:text-black/80"
           >
             &#x2715;
           </button>
@@ -29,7 +27,7 @@ const Popup = ({ position, className,show, handleClose, children }) => {
               }}
               alt="megaphone.svg"
             />
-            <h3 className="text-[20px]">Le saviez-vous ?</h3>
+            <h3 className={`text-2xl ${bebas.className}`}>Le saviez-vous ?</h3>
           </div>
           {children}
           <div className="text-right">
@@ -40,7 +38,7 @@ const Popup = ({ position, className,show, handleClose, children }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Popup
+export default Popup;
