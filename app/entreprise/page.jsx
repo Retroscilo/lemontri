@@ -19,7 +19,7 @@ export const getRandomInt = (min, max) => {
 export default function Page({}) {
   const { setVisible, setStyles } = useContext(HomeButtonContext);
   const [currentTrick, setCurrentTrick] = useState({});
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
     setVisible(true);
     if (showPopup) setStyles({ transform: "translate(20px, -220px)" });

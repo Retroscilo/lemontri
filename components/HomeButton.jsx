@@ -11,7 +11,7 @@ const HomeButton = ({}) => {
   return (
     <div
       className="rounded-full bg-secondary-light fixed bottom-6 right-6 transform-none"
-      style={{ display: visible ? "initial" : "none", transition: "all 400ms ease-in-out", ...styles }}
+      style={{ display: visible ? "initial" : "none", transition: "all 500ms ease-in-out", ...styles }}
     >
       <Link href="/">
         <IconButton color="paper" className="shadow-lg ">

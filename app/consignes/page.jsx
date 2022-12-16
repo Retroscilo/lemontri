@@ -26,33 +26,32 @@ export default function Page({}) {
     setDisplay(hiveGridElements.filter((el) => el.key.includes(e.target.value) || el.key === "input"));
   };
   if (typeof window === "undefined" || active === null) return null;
-  if (!active)
-    return (
-      <div>
-        <Thread pages={Consignes}></Thread>
-      </div>
-    );
   return (
     <div className="h-screen flex flex-col  mx-auto">
       <div className="grid grid-cols-[30%_70%]">
         <Image src={Logo} height={60} className="py-4 mx-auto" alt="lemon tri logo" />
-        <h1 className={`${edo.className} text-center text-xl my-2 text-secondary-light self-center`}>Les consignes</h1>
+        <h1 className={`${edo.className} text-right pr-5 text-3xl my-2 text-secondary-light self-center`}>Les consignes</h1>
       </div>
-
-      <>
-        <TextField
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search />
-              </InputAdornment>
-            ),
-          }}
-          className="bg-white rounded-full max-w-[350px] mx-auto my-3 border-none"
-          onChange={handleFilter}
-        ></TextField>
-        <HiveGrid elements={displayedElements} hidden={hidden} />
-      </>
+      {!active ? (
+        <div>
+          <Thread pages={Consignes}></Thread>
+        </div>
+      ) : (
+        <>
+          <TextField
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Search />
+                </InputAdornment>
+              ),
+            }}
+            className="bg-white rounded-full max-w-[350px] mx-auto my-3 border-none"
+            onChange={handleFilter}
+          ></TextField>
+          <HiveGrid elements={displayedElements} hidden={hidden} />
+        </>
+      )}
     </div>
   );
 }
