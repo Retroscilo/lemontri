@@ -9,6 +9,7 @@ import Options from './customComponents/options'
 import Quiz from './customComponents/quiz'
 import Old from "/assets/icons/zesty/old.png"
 import ExplicationQuiz from './customComponents/explicationQuiz'
+import OpenAi from './OpenApi'
 
 const botName = 'Zesty';
 

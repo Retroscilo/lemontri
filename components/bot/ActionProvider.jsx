@@ -59,6 +59,23 @@ const ActionProvider = ({
      }))
   }
 
+  const fetchOpenAi = async (message) => {
+    const init = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message }),
+    }
+    const res = await fetch("/api/openai", init)
+      .then((res) => res.json())
+      .then(({ name }) => {
+        console.log({ name })
+        sendText(name)
+      })
+  }
+
   //Envoi un conseil alétoire
   const handleConseil = () => {
     const conseil = conseils[Math.floor(Math.random() * conseils.length)]
@@ -126,6 +143,7 @@ const ActionProvider = ({
             handleConsigne,
             handleQuizAnswer,
             showQuiz,
+            fetchOpenAi,
           },
         })
       })}
