@@ -8,8 +8,10 @@ import RecycleCarton from '@/assets/images/PapierCarton/recycle-carton.png'
 import Verre from '@/assets/images/Verre/logo.png'
 import VerreCard1 from '@/assets/images/Verre/card-1.png'
 import VerreCard2 from '@/assets/images/Verre/card-2.png'
+import RecycleGlass from '@/assets/images/Verre/recycle-glass.png'
 import BioDechet from '@/assets/images/BioDechet/logo.png'
 import BioDechetCard1 from '@/assets/images/BioDechet/card-1.png'
+import RecycelBio from '@/assets/images/BioDechet/recycle-bio.png'
 import forbidden from '@/assets/images/Forbidden.png'
 
 export default function Page(props) {
@@ -59,7 +61,14 @@ export default function Page(props) {
                 '                verre a permis d’éviter l’émission d’1,3 million de tonnes de C02. (ADEME) Le verre se recycle\n' +
                 '                à 100% et à l’infini. A l’issue du processus de recyclage, le verre peut être réutilisé pour la\n' +
                 '                fabrication de nouveaux flacons, pots, ou bouteilles.',
-            recycleSteps: ['hahahahha', 'hohohohho', 'hohohohohoohoh']
+            recycleImage: RecycleGlass,
+            recycleSteps: [
+                'Les flacons et bouteilles en verre sont d’abord triées manuellement. Puis, le verre passe une étape de tri mécanique, permettant d’éliminer les éléments en métal, les bouchons...',
+                'Une phase de tri optique permet ensuite de séparer les objets en céramique, non recyclables.',
+                'Puis, la matière est soufflée pour retirer les étiquettes.',
+                'Le verre est ensuite broyé. Le calcin issu de ce broyat est envoyé dans un four à 1400 degrés, là où est ajouté de la silice, de la soude, du calcaire et du colorant.',
+                'La nouvelle matière est fondue, envoyée dans un moule et place aux nouveaux contenants en verre !',
+            ]
         }, {
             materiel: 'BioDechet',
             title: 'DÉCHETS ALIMENTAIRES',
@@ -74,7 +83,14 @@ export default function Page(props) {
                 '                verre a permis d’éviter l’émission d’1,3 million de tonnes de C02. (ADEME) Le verre se recycle\n' +
                 '                à 100% et à l’infini. A l’issue du processus de recyclage, le verre peut être réutilisé pour la\n' +
                 '                fabrication de nouveaux flacons, pots, ou bouteilles.',
-            recycleSteps: ['hahahahha', 'hohohohho', 'hohohohohoohoh']
+            recycleImage: RecycelBio,
+            recycleSteps: [
+                'D’abord, les biodéchets sont triés à la source et isolées du reste des déchets. Ensuite, plusieurs options :',
+                '1. Les biodéchets sont valorisés en compost',
+                'Après de précieux soin et des mois de matûration, le compost passe au tamis et l’on obtient un engrais naturel et 100% circulaire !',
+                '2. Les biodéchets sont valorisés en biogaz, c’est ce qu’on appelle la méthanisation',
+                'À l’issue du processus de méthanisation, une partie des biodéchets se transforment en digestat, une sorte de pâte épaisse qui, si elle respecte des normes biochimiques, peut être épandue sur des sols cultivables.'
+            ]
         }
     ];
 
@@ -89,7 +105,7 @@ export default function Page(props) {
                 <h1 className="title text-center text-[30px] md:text-[70px] lg:text-[100px] mt-[20px] md:my-[40px] font-bold">{getItem().title}</h1>
             </div>
             <div id="circle" className="hidden md:block" style={{backgroundColor: getItem().color}}></div>
-            <Image id="logo" src={getItem().logo} width="150" height="150"/>
+            <Image id="logo" className="bottom-0 mb-5 md:bottom-auto" src={getItem().logo} width="150" height="150"/>
         </div>
         <div
             className="section-1 flex flex-col xl:flex-row gap-10 place-content-around mt-[380px] md:mt-[550px] mb-[100px]">
@@ -130,12 +146,11 @@ export default function Page(props) {
             <section className="dark:bg-gray-800 dark:text-gray-100">
                 <div className="container mx-auto flex flex-col p-6">
                     <div className="divide-y divide-gray-700">
-
-
                         {getItem().recycleSteps.map((step, key) => (
                             <div className="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0"
                                  key={key}>
-                                <div className="flex items-center justify-center lg:col-span-1 col-span-full">
+                                <div
+                                    className="flex items-center justify-center lg:col-span-1 col-span-full rounded-full bg-red">
                                     <span className="text-[50px]">{key + 1}</span>
                                 </div>
                                 <div
@@ -144,12 +159,10 @@ export default function Page(props) {
                                 </div>
                             </div>
                         ))}
-
-
                     </div>
                 </div>
             </section>
-            <Image src={getItem().recycleImage}/>
+            <Image className="mx-auto w-100" src={getItem().recycleImage}/>
         </div>
     </div>;
 }
