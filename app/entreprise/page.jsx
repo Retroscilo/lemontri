@@ -8,7 +8,9 @@ import reunion from "/public/salles/Ecole.png";
 import Popup from "@/components/popup";
 import { useState, useEffect, useContext } from "react";
 import { HomeButtonContext } from "@/lib/HomeButtonContext";
-import { Home } from "@mui/icons-material";
+import Logo from "@/assets/logos/lemontri_white.png";
+import localFont from "@next/font/local";
+const edo = localFont({ src: "../../assets/fonts/edosz.ttf" });
 
 export const getRandomInt = (min, max) => {
   min = Math.ceil(min);
@@ -155,6 +157,10 @@ export default function Page({}) {
   return (
     <div className="relative w-fit ">
       <div className="container p-6 bg-yellow-400">
+        <div className="grid grid-cols-[30%_70%]">
+          <Image src={Logo} height={60} className="py-4 mx-auto" alt="lemon tri logo" />
+          <h1 className={`${edo.className} text-right pr-5 text-3xl my-2 text-white self-center`}>L&apos;espace entreprise</h1>
+        </div>
         <div className="px-[30px]">
           <div className="h-[10px] w-full bg-white" />
         </div>
