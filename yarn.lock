@@ -1279,11 +1279,6 @@
   dependencies:
     "glob" "7.1.7"
 
-"@next/font@^13.0.6":
-  "integrity" "sha512-5vxNmvnV0CbYjQGtztD5Axft9C7npKihbQpiFhnDwdb99f9K/QSFfcJqxz0E5QBkf67O2niVGJ5lApJDu78w0w=="
-  "resolved" "https://registry.npmjs.org/@next/font/-/font-13.0.6.tgz"
-  "version" "13.0.6"
-
 "@next/swc-darwin-arm64@13.0.6":
   "integrity" "sha512-AUVEpVTxbP/fxdFsjVI9d5a0CFn6NVV7A/RXOb0Y+pXKIIZ1V5rFjPwpYfIfyOo2lrqgehMNQcyMRoTrhq04xg=="
   "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.0.6.tgz"
@@ -3338,18 +3333,6 @@
   "integrity" "sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA=="
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
-
-"react-chatbot-kit@^2.1.2":
-  "integrity" "sha512-N9bhg7/YnVz3TcNaV19szfBqCLHfVevisdqg38QowOI1hxgebwejrkggGz+T04yJK2j7dhwNqHpx5nWMfugzZw=="
-  "resolved" "https://registry.npmjs.org/react-chatbot-kit/-/react-chatbot-kit-2.1.2.tgz"
-  "version" "2.1.2"
-  dependencies:
-    "react-conditionally-render" "^1.0.2"
-
-"react-conditionally-render@^1.0.2":
-  "integrity" "sha512-CtjIgaLHVDSgHis3gv/PT/8EnD6GPUL8PrhUjh7DP6S5Y3p56dGu7y2nVg6pYv1kv+fGznRhRmX3assr/vRw3A=="
-  "resolved" "https://registry.npmjs.org/react-conditionally-render/-/react-conditionally-render-1.0.2.tgz"
-  "version" "1.0.2"
 
 "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.0 || ^18.0.0", "react-dom@^18.2.0", "react-dom@>=16.6.0", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
