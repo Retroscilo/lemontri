@@ -455,16 +455,19 @@ h1, h2, h3, h4 , h5 {
   -webkit-box-orient: vertical
 }
 
-.popup {
+.popup-entreprise {
+  position: sticky;
   overflow: hidden;
   transition: all 400ms ease-in-out;
-  transform: translateY(0);
+  top: 0;
+  left: 0;
+  /* transform: translateY(0); */
 }
 
 .inactive{
   position: fixed;
   box-shadow: none;
-  transform: translateY(100%);
+  
 }
 
 .chatbot > div, .chatbot > div > div {

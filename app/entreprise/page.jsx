@@ -16,7 +16,7 @@ export const getRandomInt = (min, max) => {
 // import  from '/public/salles/Cantine.png';
 export default function Page({ }) {
   const [currentTrick, setCurrentTrick] = useState({})
-  const [showPopup, setShowPopup] = useState(true)
+  const [showPopup, setShowPopup] = useState(false)
 
   const salles = [
     {
@@ -121,15 +121,15 @@ export default function Page({ }) {
     },
   ]
 
-  useEffect(() => {
-    const intRandom = getRandomInt(0,tricks.length - 1)
+  // useEffect(() => {
+  //   const intRandom = getRandomInt(0,tricks.length - 1)
 
-    const trick = tricks[intRandom]
+  //   const trick = tricks[intRandom]
 
-    setCurrentTrick(trick)
+  //   setCurrentTrick(trick)
 
-    console.log({ trick })
-  }, [])
+  //   console.log({ trick })
+  // }, [])
 
   const handleCloseTrick = () => {
     setShowPopup(false)
@@ -145,7 +145,7 @@ export default function Page({ }) {
   }
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full bg-pink-400">
       <div className="container p-6 bg-yellow-400">
         <div className="px-[30px]">
           <div className="h-[10px] w-full bg-white" />
@@ -177,27 +177,12 @@ export default function Page({ }) {
               <span className="tooltiptext ">{name}</span>
             </div>
           ))}
-          {/* <div className="col-span-3">
-            <Image src={bureau} alt="bureau.png" />
-          </div>
-          <div className="col-span-3">
-            <Image src={reunion} alt="openspace.png" />
-          </div>
-          <div className="col-span-6">
-            <Image src={openspace} alt="openspace.png" />
-          </div>
-          <div className="col-span-3">
-            <Image src={kitchen} alt="cuisine.png" />
-          </div>
-          <div className="col-span-3">
-            <Image src={cafet} alt="openspace.png" />
-          </div> */}
         </div>
       </div>
       <Popup
         handleClose={handleCloseTrick}
         show={showPopup && currentTrick?.text}
-        className="sticky bottom-0 left-0"
+        className="popup-entreprise"
       >
         <div className="h-[100px] line-camp ">{currentTrick?.text}</div>
       </Popup>
