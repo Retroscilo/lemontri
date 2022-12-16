@@ -7,7 +7,7 @@ import { HomeButtonContext } from "@/lib/HomeButtonContext";
 import { useState } from "react";
 import HomeButton from "@/components/HomeButton";
 
-const edo = localFont({ src: "../assets/fonts/edosz.ttf", variable: "--font-edo" });
+
 
 export default function RootLayout({ children }) {
   const [visible, setVisible] = useState(false);
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <head />
-      <body id="__next" className={edo.variable}>
+      <body id="__next" >
         <StyledEngineProvider injectFirst={true}>
           <HomeButtonContext.Provider value={{ styles, setStyles, visible, setVisible }}>
             <ThemeContext>{children}</ThemeContext>
