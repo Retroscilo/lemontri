@@ -18,6 +18,7 @@ export const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 // import  from '/public/salles/Cantine.png';
+
 export default function Page({}) {
   const { setVisible, setStyles } = useContext(HomeButtonContext);
   const [currentTrick, setCurrentTrick] = useState({});
@@ -156,6 +157,7 @@ export default function Page({}) {
 
   return (
     <div className="relative w-fit ">
+
       <div className="container p-6 bg-yellow-400">
         <div className="grid grid-cols-[30%_70%]">
           <Image src={Logo} height={60} className="py-4 mx-auto" alt="lemon tri logo" />
@@ -189,21 +191,6 @@ export default function Page({}) {
               <span className="tooltiptext ">{name}</span>
             </div>
           ))}
-          {/* <div className="col-span-3">
-            <Image src={bureau} alt="bureau.png" />
-          </div>
-          <div className="col-span-3">
-            <Image src={reunion} alt="openspace.png" />
-          </div>
-          <div className="col-span-6">
-            <Image src={openspace} alt="openspace.png" />
-          </div>
-          <div className="col-span-3">
-            <Image src={kitchen} alt="cuisine.png" />
-          </div>
-          <div className="col-span-3">
-            <Image src={cafet} alt="openspace.png" />
-          </div> */}
         </div>
       </div>
       <Popup handleClose={handleCloseTrick} show={showPopup && currentTrick?.text} className="sticky bottom-0 left-0">

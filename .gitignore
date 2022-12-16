@@ -30,6 +30,8 @@ yarn.lock
 .env*.local
 .env
 
+.env
+
 # vercel
 .vercel
 
