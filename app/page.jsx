@@ -35,7 +35,7 @@ export default function Page({}) {
       {
         name: "discutons",
         Src: Discutons,
-        url: "/chatbot",
+        url: "/discutons",
       },
       {
         name: "Consignes",
