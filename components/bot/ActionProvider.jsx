@@ -60,20 +60,21 @@ const ActionProvider = ({
   }
 
   const fetchOpenAi = async (message) => {
+    if(message) {
     const init = {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body:  ({ message: message }),
     }
     const res = await fetch("/api/openai", init)
       .then((res) => res.json())
-      .then(({ name }) => {
-        console.log({ name })
-        sendText(name)
+      .then((data) => {
+        sendText(data)
       })
+    }
   }
 
   //Envoi un conseil alétoire
