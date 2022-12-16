@@ -16,7 +16,7 @@ const Start = ({}) => {
   }, []);
   if (state !== index) return null;
   if (typeof window === "undefined") return null;
-  if (typeof window !== "undefined") localStorage.setItem("Consignes", true);
+  if (typeof window !== "undefined") localStorage.setItem("Consignes", "active");
   return (
     <div className="grow pb-6 flex flex-col justify-between">
       <SpeakingLemon image={Zesty} position={{ top: "-10px" }}>
@@ -27,7 +27,7 @@ const Start = ({}) => {
         </p>
       </SpeakingLemon>
       <div className="flex flex-col gap-5 justify-evenly sm:flex-row max-w-[300px] mx-auto">
-        <Button variant="contained" size="large" onClick={() => setState(index + 1)}>
+        <Button variant="contained" size="large" onClick={() => window.location.reload()}>
           Ca marche 👌
         </Button>
       </div>
