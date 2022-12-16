@@ -67,12 +67,14 @@ const ActionProvider = ({
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body:  ({ message: message }),
+      body:  JSON.stringify({ message: message }),
     }
     const res = await fetch("/api/openai", init)
       .then((res) => res.json())
       .then((data) => {
-        sendText(data)
+        const messageTosend = data?.name
+        
+        sendText(messageTosend)
       })
     }
   }
