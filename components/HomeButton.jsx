@@ -10,11 +10,11 @@ const HomeButton = ({}) => {
   if (!visible) return null;
   return (
     <div
-      className="rounded-full bg-secondary-light fixed bottom-6 right-6 transition-all transform-none scale-125"
-      style={{ display: visible ? "initial" : "none", ...styles }}
+      className="rounded-full bg-secondary-light fixed bottom-6 right-6 transform-none"
+      style={{ display: visible ? "initial" : "none", transition: "all 400ms ease-in-out", ...styles }}
     >
       <Link href="/">
-        <IconButton color="paper" className="shadow-lg">
+        <IconButton color="paper" className="shadow-lg ">
           <Home className="text-white" color="paper" />
         </IconButton>
       </Link>

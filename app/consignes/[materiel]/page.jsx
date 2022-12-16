@@ -75,13 +75,13 @@ export default function Page(props) {
           <h1 className="title text-center text-[30px] md:text-[70px] lg:text-[100px] font-bold">{getItem().title}</h1>
         </div>
         <div id="circle" className="hidden md:block" style={{ backgroundColor: getItem().color }}></div>
-        <Image id="logo" src={getItem().logo} width="150" height="150" />
+        <Image alt="image" id="logo" src={getItem().logo} width="150" height="150" />
       </div>
       <div className="section-1 flex flex-col xl:flex-row gap-10 place-content-around mt-[380px] md:mt-[550px] mb-[100px]">
         {getItem().cards.map((card, key) => (
           <div className="flex-1 flex justify-center" key={key}>
             <div className="rounded-lg bg-white max-w-sm flex flex-col justify-between">
-              <Image className="rounded-t-lg" src={card.image} width="100 %" />
+              <Image alt="image" className="rounded-t-lg" src={card.image} width="100 %" />
               <div className="p-6">
                 <h5 className="text-center text-2xl mb-2 font-bold" style={{ color: getItem().color }}>
                   {card.text}
@@ -96,7 +96,7 @@ export default function Page(props) {
         <div className="col-sm-4 landing-section2-pillar">
           <div>
             <div className="landing-icon">
-              <Image id="forbidden" src={forbidden} width="100" height="100" />
+              <Image alt="image" id="forbidden" src={forbidden} width="100" height="100" />
             </div>
             <h1 className="text-center my-5 text-[30px] sm:text-[60px] font-bold underline decoration-[10px]">INTERDITS</h1>
             <p className="text-center font-bold text-[15px] sm:text-[30px]">{getItem().forbiddenText}</p>
