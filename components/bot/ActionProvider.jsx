@@ -2,14 +2,7 @@
 
 import React from "react"
 import { createClientMessage } from "react-chatbot-kit"
-
-export const conseils = [
-  "conseil 1",
-  "conseil 2",
-  "conseil 4",
-  "conseil 5",
-  "conseil 6",
-]
+import { conseils } from "constantes/tricks"
 
 const ActionProvider = ({
   createChatBotMessage,

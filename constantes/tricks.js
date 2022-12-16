@@ -62,7 +62,7 @@ export const tricks = [
   {
     matiere:"toners et cartouches",
     room:"bureau",
-    text:"Si chaque cartouche était recyclée au moins une fois, mle volume de ce type de déchets dimunuerait de moitié. La cartouche d'imprimante représente donc un enjeu considérable en matière de recyclage.",
+    text:"Si chaque cartouche était recyclée au moins une fois, le volume de ce type de déchets dimunuerait de moitié. La cartouche d'imprimante représente donc un enjeu considérable en matière de recyclage.",
   },
   {
     matiere:"biodéchets",
@@ -79,17 +79,17 @@ export const tricks = [
 
 
 
-export const conseil = [
-    "Réduire l'utilisation des produits jetables : optez pour des contenants réutilisables pour les aliments, les boissons et les produits ménagers. Utilisez des sacs réutilisables pour vos courses et évitez les sacs en plastique.",
-    "Composter :Composter les déchets organiques vous permet de réduire le volume des déchets et de produire un fertilisant naturel pour votre jardin.",
-    "Achetez en vrac: Achetez des produits en vrac pour éviter le gaspillage et les emballages jetables. De plus, vous pourrez acheter seulement ce dont vous avez besoin.",
-    "Réutilisez et réparez :Réutilisez les objets et réparez-les lorsqu'ils sont endommagés plutôt que de les remplacer. Cela vous fera économiser de l'argent et réduira la quantité de déchets à éliminer.",
-    "Utilisez des produits durables : Choisissez des produits durables fabriqués à partir de matériaux recyclés. Cela vous aidera à réduire les déchets tout en contribuant à la protection de l'environnement.",
-    "Réutilisez les matériaux :Réutilisez les matériaux dont vous n'avez plus besoin. Par exemple, vous pouvez transformer des bouteilles en verre ou des canettes en contenants ou en accessoires décoratifs pour votre maison.",
-    "Réduisez l'utilisation du papier : Réduisez l'utilisation du papier en imprimant et en photocopiant moins souvent et en optant pour des alternatives numériques. De plus, réutilisez le papier qui n'est plus nécessaire.",
-    "Évitez les produits chimiques : Évitez les produits chimiques et optez pour des solutions naturelles pour nettoyer votre maison. Vous pouvez par exemple fabriquer vos produits d'entretien à base de bicarbonate de soude, vinaigre blanc et citron.",
-    "Réduisez votre consommation d'eau : Réduisez votre consommation d'eau en prenant des douches plus courtes et en réutilisant l'eau de pluie pour les tâches ménagères.",
-    "Utilisez des produits de seconde main : Utilisez des produits de seconde main pour réduire votre consommation et votre production de déchets. Vous pouvez trouver des produits à prix abordables dans les magasins d'occasion et les sites de vente en ligne.",
+export const conseils = [
+    "Optez pour des contenants réutilisables pour les aliments, les boissons et les produits ménagers. Utilisez des sacs réutilisables pour vos courses et évitez les sacs en plastique.",
+    "Composter les déchets organiques vous permet de réduire le volume des déchets et de produire un fertilisant naturel pour votre jardin.",
+    "Achetez des produits en vrac pour éviter le gaspillage et les emballages jetables. De plus, vous pourrez acheter seulement ce dont vous avez besoin.",
+    "Réutilisez les objets et réparez-les lorsqu'ils sont endommagés plutôt que de les remplacer. Cela vous fera économiser de l'argent et réduira la quantité de déchets à éliminer.",
+    "Choisissez des produits durables fabriqués à partir de matériaux recyclés. Cela vous aidera à réduire les déchets tout en contribuant à la protection de l'environnement.",
+    "Réutilisez les matériaux dont vous n'avez plus besoin. Par exemple, vous pouvez transformer des bouteilles en verre ou des canettes en contenants ou en accessoires décoratifs pour votre maison.",
+    "Réduisez l'utilisation du papier en imprimant et en photocopiant moins souvent et en optant pour des alternatives numériques. De plus, réutilisez le papier qui n'est plus nécessaire.",
+    "Évitez les produits chimiques et optez pour des solutions naturelles pour nettoyer votre maison. Vous pouvez par exemple fabriquer vos produits d'entretien à base de bicarbonate de soude, vinaigre blanc et citron.",
+    "Réduisez votre consommation d'eau en prenant des douches plus courtes et en réutilisant l'eau de pluie pour les tâches ménagères.",
+    "Utilisez des produits de seconde main pour réduire votre consommation et votre production de déchets. Vous pouvez trouver des produits à prix abordables dans les magasins d'occasion et les sites de vente en ligne.",
 ]
 
 
